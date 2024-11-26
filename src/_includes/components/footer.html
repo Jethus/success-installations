@@ -1,0 +1,61 @@
+<!-- ============================================ -->
+<!--                   Footer                     -->
+<!-- ============================================ -->
+
+<footer id="footer">
+  <div class="flex-group-col">
+    <div class="container">
+      <div class="left-section">
+        <a href="/" class="logo" aria-label="back to home">
+          <img
+            src="/assets/svgs/logo-white.svg"
+            alt="logo"
+            width="300"
+            height="41"
+            aria-hidden="true"
+            decoding="async"
+          />
+        </a>
+      </div>
+      <div class="right-section">
+        <ul>
+          <li><h4>Services</h4></li>
+          <li>Web Development</li>
+          <li>Web Design</li>
+          <li>Branding</li>
+          <li>Print Design</li>
+          <li>SEO</li>
+        </ul>
+        <ul>
+          <li><h4>Agency</h4></li>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/case-studies">Case Studies</a></li>
+          {#
+          <li><a href="/process">Our Process</a></li>
+          #}
+          <li><a href="/contact">Contact Us</a></li>
+          {#
+          <li><a href="/insights">Insights</a></li>
+          #}
+        </ul>
+        <ul>
+          <li><h4>Send us a message</h4></li>
+          <li>
+            <a href="tel:{{client.phoneForTel}}"
+              >T: {{client.phoneFormatted}}</a
+            >
+          </li>
+          <li><a href="mailto:{{client.email}}">E: {{client.email}}</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="credit">
+      <p>
+        Copyright ©2024
+        <a href="/" target="_blank" rel="noopener">Pixelboost</a>. All rights
+        reserved.
+      </p>
+    </div>
+  </div>
+</footer>

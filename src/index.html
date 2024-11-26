@@ -1,0 +1,530 @@
+---
+title: "Pixelboost | Expert Web Design & Development | Whitby, ON"
+description: "Discover expert web design and development in Toronto. Specializing in responsive, mobile-first websites and speed optimization."
+preloadImg: "/assets/images/hero.webp"
+permalink: "/"
+eleventyNavigation:
+key: Home
+order: 1
+---
+
+{% extends "layouts/base.html" %} {% block head %}
+
+<script src="/assets/js/landing.js" defer></script>
+<!-- Script for Netlify Identity -->
+<script
+  src="https://identity.netlify.com/v1/netlify-identity-widget.js"
+  defer
+></script>
+<script defer>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", (user) => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
+{% endblock %} {% block body %}
+<!-- <section id="preloader">
+  <p>// Initializing website...</p>
+</section> -->
+
+<!-- ============================================ -->
+<!--                    Hero                      -->
+<!-- ============================================ -->
+
+<section id="hero">
+  <div class="container">
+    <div class="flex-group-row">
+      <h1 class="title fade-in">
+        Transform your business with professional
+        <span class="typing-text"></span>
+      </h1>
+      <div class="flex-group-col">
+        <p class="topper fade-in">Web Design & Development</p>
+        <p class="fade-in">
+          No page builders or intial fees - We offer 100% custom built websites
+          with superior results starting at $200/mo.
+        </p>
+        <p class="fade-in">
+          See our web solutions which are crafted to enhance user engagement and
+          drive conversions.
+        </p>
+        <div class="flex-group-col fade-in">
+          <a href="/contact" class="btn-solid" aria-label="get in touch with us"
+            >Get in touch</a
+          >
+
+          <a href="#portfolio" class="btn-line" aria-label="see our work"
+            >See our work</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!--                  What We Do                  -->
+<!-- ============================================ -->
+
+<section id="what-we-do">
+  <div class="container">
+    <div class="flex-group-col">
+      <div class="flex-text fade-in">
+        <p class="topper">Our bread & butter</p>
+        <h2 class="title">What we offer</h2>
+      </div>
+      {# new area #}
+      <div class="flex-group-row">
+        <div class="tab-container fade-in">
+          <ul class="tabs" role="tablist">
+            <li
+              class="tab-link active"
+              role="tab"
+              aria-controls="tab-1"
+              aria-selected="true"
+              tabindex="0"
+              data-tab="tab-1"
+            >
+              <strong>Responsive</strong>
+            </li>
+            <li
+              class="tab-link"
+              role="tab"
+              aria-controls="tab-2"
+              aria-selected="false"
+              tabindex="0"
+              data-tab="tab-2"
+            >
+              <strong>Mobile</strong>
+            </li>
+            <li
+              class="tab-link"
+              role="tab"
+              aria-controls="tab-3"
+              aria-selected="false"
+              tabindex="0"
+              data-tab="tab-3"
+            >
+              <strong>Optimize</strong>
+            </li>
+          </ul>
+          <div id="tab-1" class="tab-content active">
+            <div class="flex-group-row">
+              <div class="img-wrap">
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  src="./assets/images/responsive-design 1.png"
+                  alt=""
+                  width="80px"
+                  height="80px"
+                />
+              </div>
+              <h3>Fully Responsive Design</h3>
+            </div>
+            <p>
+              Seamless across all devices, our responsive designs adapt
+              perfectly to any screen, ensuring a superior user experience.
+            </p>
+          </div>
+          <div id="tab-2" class="tab-content">
+            <div class="flex-group-row">
+              <div class="img-wrap">
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  src="./assets/images/smartphone 1.png"
+                  alt=""
+                  width="80px"
+                  height="80px"
+                />
+              </div>
+              <h3>Mobile First Strategy</h3>
+            </div>
+            <p>
+              Our mobile-first approach focuses on intuitive and accessible
+              designs, enhancing engagement for on-the-go users.
+            </p>
+          </div>
+          <div id="tab-3" class="tab-content">
+            <div class="flex-group-row">
+              <div class="img-wrap">
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  src="./assets/images/settings 1.png"
+                  alt=""
+                  width="80px"
+                  height="80px"
+                />
+              </div>
+              <h3>Website Optimization</h3>
+            </div>
+            <p>
+              Fast, efficient, and optimized for search engines. Our websites
+              are built to deliver top performance and visibility.
+            </p>
+          </div>
+        </div>
+        <p class="fade-in">
+          We specialize in web design and development for businesses across
+          Canada. Every line of code is meticulously crafted to enhance site
+          performance, increasing customer engagement and boosting your
+          business's conversions.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!--                  Portfolio                   -->
+<!-- ============================================ -->
+
+<section id="portfolio">
+  <div class="container">
+    <div class="flex-group-col">
+      <div class="flex-text fade-in">
+        <p class="topper">Our Work</p>
+        <h2 class="title">See the clients we've helped out</h2>
+      </div>
+      <div class="flex-group-col">
+        <div class="item flex-group-row fade-in">
+          <picture>
+            <source
+              media="(max-width: 600px)"
+              srcset="/assets/images/portfolio/oct-website.webp"
+            />
+            <source
+              media="(min-width: 601px)"
+              srcset="/assets/images/portfolio/oct-website.webp"
+            />
+            <img
+              aria-hidden="true"
+              decoding="async"
+              src="/assets/images/portfolio/oct-website.webp"
+              alt=""
+              loading="lazy"
+              width="100%"
+              height="100%"
+            />
+          </picture>
+          <div class="text" style="background-color: #fff">
+            <p class="topper">Education / Regulator</p>
+            <h3>Ontario College of Teachers</h3>
+            <a
+              href="https://help.oct.ca/hc/en-us"
+              target="_blank"
+              class="cta btn-solid"
+              >See the site</a
+            >
+          </div>
+        </div>
+        <div class="item flex-group-row fade-in">
+          <div class="text" style="background-color: #b5cc9e">
+            <p class="topper">Farm / CSA / Food</p>
+            <h3 class="title">CSA Lunar Rhythm Garden</h3>
+            <a
+              href="https://www.csafarmdurhamkawartha.com/"
+              target="_blank"
+              class="cta btn-solid"
+              >See the site</a
+            >
+          </div>
+          <picture>
+            <source
+              media="(max-width: 600px)"
+              srcset="/assets/images/portfolio/csa-website.webp"
+            />
+            <source
+              media="(min-width: 601px)"
+              srcset="/assets/images/portfolio/csa-website.webp"
+            />
+            <img
+              aria-hidden="true"
+              decoding="async"
+              src="/assets/images/portfolio/csa-website.webp"
+              alt=""
+              loading="lazy"
+              width="100%"
+              height="100%"
+            />
+          </picture>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!--                   Pricing                    -->
+<!-- ============================================ -->
+
+<section id="pricing">
+  <div class="container">
+    <div class="flex-group-col">
+      <div class="flex-text fade-in">
+        <p class="topper">Pricing</p>
+        <h2 class="title">
+          $0 Down,<br />$200 Per Month,<br />6 Month Minimum Contract
+        </h2>
+      </div>
+      <p class="fade-in">
+        Get a 5-page website with <strong>no initial fees</strong>. Custom
+        projects quoted based on your specific needs.
+      </p>
+      <p class="fade-in">
+        You retain full ownership of your domain, content, and profiles. No
+        cancellation fees.
+      </p>
+    </div>
+    <ul class="accordion fade-in">
+      <li>
+        <button>
+          <svg
+            version="1.2"
+            baseProfile="tiny"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 72 72"
+            width="48px"
+            height="48px"
+          >
+            <line
+              stroke="#000"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="bevel"
+              stroke-miterlimit="10"
+              x1="36"
+              y1="12"
+              x2="36"
+              y2="60"
+            />
+            <line
+              stroke="#000"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="bevel"
+              stroke-miterlimit="10"
+              x1="60"
+              y1="36"
+              x2="12"
+              y2="36"
+            />
+          </svg>
+          <h3>Hosting Simplified</h3>
+        </button>
+
+        <p>
+          Your monthly payment includes hosting. No extra fees, just seamless
+          service to keep your site up and running.
+        </p>
+      </li>
+      <li>
+        <button>
+          <svg
+            version="1.2"
+            baseProfile="tiny"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 72 72"
+            width="48px"
+            height="48px"
+          >
+            <line
+              stroke="#000"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="bevel"
+              stroke-miterlimit="10"
+              x1="36"
+              y1="12"
+              x2="36"
+              y2="60"
+            />
+            <line
+              stroke="#000"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="bevel"
+              stroke-miterlimit="10"
+              x1="60"
+              y1="36"
+              x2="12"
+              y2="36"
+            />
+          </svg>
+          <h3>Unlimited Edits</h3>
+        </button>
+        <p>
+          Need to make a change? No problem. We offer unlimited updates to keep
+          your site current with your business needs.
+        </p>
+      </li>
+      <li>
+        <button>
+          <svg
+            version="1.2"
+            baseProfile="tiny"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 72 72"
+            width="48px"
+            height="48px"
+          >
+            <line
+              stroke="#000"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="bevel"
+              stroke-miterlimit="10"
+              x1="36"
+              y1="12"
+              x2="36"
+              y2="60"
+            />
+            <line
+              stroke="#000"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="bevel"
+              stroke-miterlimit="10"
+              x1="60"
+              y1="36"
+              x2="12"
+              y2="36"
+            />
+          </svg>
+          <h3>Support Available 24/7</h3>
+        </button>
+        <p>
+          Get help anytime with a real person on our 24/7 direct line. No AI,
+          bots or automated scripts.
+        </p>
+      </li>
+      <li>
+        <button>
+          <svg
+            version="1.2"
+            baseProfile="tiny"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 72 72"
+            width="48px"
+            height="48px"
+          >
+            <line
+              stroke="#000"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="bevel"
+              stroke-miterlimit="10"
+              x1="36"
+              y1="12"
+              x2="36"
+              y2="60"
+            />
+            <line
+              stroke="#000"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="bevel"
+              stroke-miterlimit="10"
+              x1="60"
+              y1="36"
+              x2="12"
+              y2="36"
+            />
+          </svg>
+          <h3>Web Design & Development</h3>
+        </button>
+        <p>
+          More than 40 hours dedicated to crafting, testing, and refining your
+          site for peak performance.
+        </p>
+      </li>
+      <li>
+        <button>
+          <svg
+            version="1.2"
+            baseProfile="tiny"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 72 72"
+            width="48px"
+            height="48px"
+          >
+            <line
+              stroke="#000"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="bevel"
+              stroke-miterlimit="10"
+              x1="36"
+              y1="12"
+              x2="36"
+              y2="60"
+            />
+            <line
+              stroke="#000"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="bevel"
+              stroke-miterlimit="10"
+              x1="60"
+              y1="36"
+              x2="12"
+              y2="36"
+            />
+          </svg>
+          <h3>Optimized for Search Engines</h3>
+        </button>
+        <p>
+          We tune your sites technical SEO for better performance in search
+          engine rankings.
+        </p>
+      </li>
+      <li>
+        <button>
+          <svg viewBox="0 0 72 72" width="48px" height="48px">
+            <line
+              stroke="#000"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="bevel"
+              stroke-miterlimit="10"
+              x1="36"
+              y1="12"
+              x2="36"
+              y2="60"
+            />
+            <line
+              stroke="#000"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="bevel"
+              stroke-miterlimit="10"
+              x1="60"
+              y1="36"
+              x2="12"
+              y2="36"
+            />
+          </svg>
+          <h3>Analytics Integration</h3>
+        </button>
+        <p>
+          Google Analytics setup included to monitor and strategize based on
+          site performance metrics.
+        </p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+{% include "components/cta.html" %} {% endblock %}

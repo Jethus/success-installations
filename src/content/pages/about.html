@@ -1,0 +1,149 @@
+---
+title: "About Us"
+description: "Meta description for the page"
+preloadImg: "/assets/images/Josh-crop.webp"
+permalink: "about/"
+eleventyNavigation:
+  key: About Us
+  order: 2
+---
+
+{% extends "layouts/base.html" %} {% block head %} {% endblock %} {% block body
+%}
+
+<!-- ============================================ -->
+<!--                    Landing                   -->
+<!-- ============================================ -->
+
+<section id="about">
+  <div class="container">
+    <div class="flex-group-row">
+      <picture class="fade-in">
+        <source media="(max-width: 600px)" srcset="" />
+        <source media="(min-width: 601px)" srcset="" />
+        <img
+          aria-hidden="true"
+          decoding="async"
+          src="/assets/images/Josh-crop.webp"
+          alt="headshot of me"
+          loading="eager"
+          width="250"
+          height="250"
+        />
+      </picture>
+      <div class="flex-group-col">
+        <div class="flex-text fade-in">
+          <p class="topper">About Pixelboost</p>
+          <h1 class="title">Reimagining Web Design for Small Businesses</h1>
+        </div>
+        <p class="fade-in">
+          Hello there! My name is Josh, and I started Pixelboost with a clear
+          mission: to change the game for small businesses seeking high-quality
+          web design.
+        </p>
+        <p class="fade-in">
+          I’m not only committed to making services affordable, but also to
+          building lasting partnerships where quality is assured. You deserve a
+          website that’s swift, seamless, and a true extension of your brand,
+          without the strain on your resources.
+        </p>
+        <p class="fade-in">
+          Let’s navigate the web design journey together, with transparent
+          pricing and a commitment to excellence that puts your business first.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!--                Why Choose Us                 -->
+<!-- ============================================ -->
+
+<section id="why-choose-us">
+  <div class="container">
+    <div class="flex-group-col">
+      <div class="flex-text fade-in">
+        <p class="topper">Why choose us?</p>
+        <h2 class="title">What makes us unique</h2>
+      </div>
+      <div class="flex-group-row fade-in">
+        <div class="card">
+          <img
+            loading="lazy"
+            decoding="async"
+            src="/assets/images/light-bulb.png"
+            alt=""
+            width="80"
+            height="80"
+          />
+          <h3>Content tailored for your brand</h3>
+          <p>
+            Crafting bespoke narratives that celebrate your brand's
+            individuality. Your business's story is distinct—let's tell it in a
+            way that captivates and connects.
+          </p>
+        </div>
+
+        <div class="card">
+          <img
+            loading="lazy"
+            decoding="async"
+            src="/assets/images/help.png"
+            alt=""
+            width="80"
+            height="80"
+          />
+          <h3>Personalized support, directly from the source</h3>
+          <p>
+            Experience the warmth of human connection in customer service. Have
+            a question or need a hand? I'm here, ready to assist—not an
+            automated response, but the person who knows your project inside
+            out.
+          </p>
+        </div>
+        <div class="card">
+          <img
+            loading="lazy"
+            decoding="async"
+            src="/assets/images/eye.png"
+            alt=""
+            width="80"
+            height="80"
+          />
+          <h3>Design which echos your vision</h3>
+          <p>
+            Your vision is our blueprint. We bring flexibility to design,
+            ensuring every element is a reflection of your brand's personality
+            and ambition. Customization without constraints, for a digital space
+            that's unequivocally yours.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!--                 What else?                   -->
+<!-- ============================================ -->
+
+<section id="what-else">
+  <div class="container">
+    <div class="flex-group-col">
+      <div class="flex-text fade-in">
+        <p class="topper">What else do you do?</p>
+        <h2 class="title">Our capabilities</h2>
+      </div>
+      <div class="flex-group-wrap fade-in">
+        <p>Web Development</p>
+        <p>Web Design</p>
+        <p>Branding</p>
+        <p>Print Design</p>
+        <p>Search Engine Optimization</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include "components/cta.html" %} {% endblock %}

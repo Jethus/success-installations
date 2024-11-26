@@ -1,0 +1,88 @@
+---
+title: "Contact Us"
+description: "Get in touch with us to kickstart your online presence"
+preloadImg: ""
+permalink: "contact/"
+---
+
+{% extends "layouts/base.html" %} {% block head %} {% endblock %} {% block body
+%}
+
+<!-- ============================================ -->
+<!--                    LANDING                   -->
+<!-- ============================================ -->
+
+<section id="contact">
+  <div class="container">
+    <div class="flex-group-col">
+      <div class="flex-text fade-in">
+        <p class="topper">Contact Us</p>
+        <h1 class="title">Let's work together</h1>
+      </div>
+      <p class="fade-in">
+        Whether you're an established brand or are just starting out, we'd love
+        to hear from you and learn about your business.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!--                Get in Touch                  -->
+<!-- ============================================ -->
+
+<section id="get-in-touch">
+  <div class="container">
+    <div class="flex-group-col">
+      <div class="flex-text fade-in">
+        <p class="topper">Tell us about your project</p>
+        <h2 class="title">Get in Touch</h2>
+      </div>
+      <form
+        id="contact-form"
+        class="fade-in"
+        name="Contact Form"
+        method="post"
+        data-netlify="true"
+      >
+        <div class="grid-group">
+          <div class="flex-group-col">
+            <label for="name">Name <span>*</span> </label>
+            <input required type="text" id="name" name="name" placeholder="" />
+          </div>
+          <div class="flex-group-col">
+            <label for="email">Email <span>*</span> </label>
+            <input
+              required
+              type="text"
+              id="email"
+              name="email"
+              placeholder=""
+            />
+          </div>
+          <div class="flex-group-col">
+            <label for="description">Project Description <span>*</span> </label>
+            <textarea
+              required
+              type="text"
+              name="description"
+              id="description"
+              placeholder="Tell us about your project..."
+            ></textarea>
+          </div>
+        </div>
+
+        <button class="btn-solid" type="submit">Send your inquiry</button>
+      </form>
+      <p class="fade-in">
+        or, if you prefer to contact me directly:<br /><br />
+        <b>email: </b>
+        <a href="mailto:{{client.personalEmail}}">{{client.personalEmail}}</a
+        ><br />
+        <b>phone: </b>
+        <a href="tel:{{client.phoneForTel}}">{{client.phoneFormatted}}</a>
+      </p>
+    </div>
+  </div>
+</section>
+{% endblock %}
