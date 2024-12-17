@@ -1,0 +1,145 @@
+/*-- -------------------------- -->
+<---       SCSS Typeography     -->
+<--- -------------------------- -*/
+@use "vars" as *;
+
+/* merriweather-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Merriweather";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/assets/fonts/merriweather-v30-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* merriweather-900 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Merriweather";
+  font-style: normal;
+  font-weight: 900;
+  src: url("/assets/fonts/merriweather-v30-latin-900.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* merriweather-sans-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Merriweather Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/assets/fonts/merriweather-sans-v26-latin-regular.woff2")
+    format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* merriweather-sans-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Merriweather Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/assets/fonts/merriweather-sans-v26-latin-700.woff2")
+    format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+$fs-cta: clamp(4rem, 10vw, 7rem); // 64-128px
+$fs-xxxxl: clamp(3.75rem, 7vw, 5rem); // 64-96px
+$fs-xxxl: clamp(3.5rem, 6vw, 4rem); // 60-72px
+$fs-xxl: clamp(3rem, 5vw, 3.5rem); // 48-60px
+$fs-xl: clamp(2.5rem, 4vw, 3rem); // 40-48px
+$fs-l: clamp(1.875rem, 3vw, 2.5rem); // 30-40px
+$fs-m: clamp(1.5rem, 2vw, 1.875rem); // 20-30px
+$fs-s: clamp(1.125rem, 1.5vw, 1.5rem); // 18-24px
+$fs-base: clamp(1rem, 1.25vw, 1.125rem); // 16-18px
+$fs-xs: clamp(0.875rem, 1.25vw, 1rem); // 14-16px
+
+$line-height: calc(4px + 2ex + 4px);
+
+// Headings font
+$header-font: "Merriweather", "Arial", sans-serif;
+// Body font
+$body-font: "Merriweather Sans", "Arial", sans-serif;
+
+// Font adjustments
+$line-height-small: 1.2;
+$line-height-normal: 1.6;
+$letter-spacing-wide: 0.05em;
+
+// Font weights
+$regular-weight: 400;
+$bold-weight: 700;
+$black-weight: 900;
+
+@mixin header-style {
+  font-family: $header-font;
+  line-height: $line-height;
+  font-weight: $black-weight;
+}
+
+@mixin body-style {
+  font-family: $body-font;
+  line-height: $line-height-normal;
+}
+
+@mixin link-style($colour) {
+  color: $colour;
+
+  &:hover {
+    color: $brand-primary;
+  }
+}
+
+// Text styles
+h1 {
+  font-size: $fs-xxl;
+}
+
+h2 {
+  font-size: $fs-xl;
+}
+
+h3 {
+  font-size: $fs-l;
+}
+
+h4 {
+  font-size: $fs-m;
+}
+
+h5 {
+  font-size: $fs-s;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  @include header-style;
+}
+
+p,
+ul,
+label,
+input {
+  font-size: $fs-base;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:not([class*="btn"]) {
+  @include link-style($brand-secondary);
+  transition: $transition-default;
+}
+
+.topper {
+  align-self: flex-start;
+  font-size: $fs-xs;
+  font-weight: $bold-weight;
+  line-height: $line-height-small;
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing-wide;
+  color: $acc-yellow;
+  display: block;
+}

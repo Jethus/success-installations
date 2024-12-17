@@ -1,0 +1,49 @@
+/*-- -------------------------- -->
+<---       SCSS Variables       -->
+<--- -------------------------- -*/
+// SCSS variables/mixins/functions
+$brand-primary: #7e0000;
+$brand-secondary: #ff5900;
+$acc-yellow: #ffd500;
+$acc-blue: #2c3e50;
+$acc-cream: #ede3d7;
+$acc-midgray: #353535;
+$acc-darkgray: #202020;
+$dark: #000;
+$light: #fff;
+
+/* 60px - 100px top and bottom */
+$container-padding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
+
+// Content width
+$content-width: 80em;
+
+// Spacing
+$spacing-xsmall: 0.25rem;
+$spacing-small: 0.5rem;
+$spacing-semi-small: 0.75rem;
+$spacing-medium: 1rem;
+$spacing-semi-medium: 1.25rem;
+$spacing-semi-large: 1.5rem;
+$spacing-large: 2rem;
+
+// Border radius
+$border-radius-small: 0.25rem;
+$border-radius-medium: 0.5rem;
+$border-radius-large: 0.75rem;
+
+// Border values
+$border-dark: 2px solid $dark;
+
+// Transition
+$transition-default: all 0.12s ease-in-out;
+
+// Mixins for container responsive design
+// Define a map of breakpoints
+$breakpoints: (
+  x-small: 16rem,
+  small: 32rem,
+  medium: 48rem,
+  large: 64rem,
+  max: 76rem,
+);

@@ -1,0 +1,8 @@
+@use "../styles/index" as *;
+
+#authority {
+  background: url("/assets/images/authority01.jpg") no-repeat center center;
+  background-size: cover;
+  position: relative;
+  z-index: -2;
+}

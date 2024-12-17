@@ -1,0 +1,33 @@
+@use "../styles/index" as *;
+
+.fade-in {
+  @include fade-in;
+  will-change: transform, opacity;
+}
+
+.slide-out {
+  transform: translateY(-200vh);
+  will-change: transform;
+}
+
+.flex-group-col {
+  @include flex-group-col;
+  flex: 1;
+}
+
+.flex-group-row {
+  @include flex-group-row;
+}
+
+.grid-group {
+  @include grid-group;
+}
+
+.flex-text {
+  @include flex-group-col;
+  gap: $spacing-small;
+}
+
+.btn-red {
+  @include btn-red;
+}

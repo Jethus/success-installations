@@ -1,0 +1,74 @@
+/*-- -------------------------- -->
+<---        Contact us          -->
+<--- -------------------------- -*/
+@use "../styles/index" as *;
+
+// Contact styles
+
+#contact {
+  background-color: $acc-yellow;
+  .flex-group-col {
+    align-items: flex-start;
+    .flex-text {
+      align-items: flex-start;
+    }
+  }
+}
+
+#get-in-touch {
+  background-color: $acc-cream;
+
+  .flex-group-col {
+    align-items: flex-start;
+
+    .flex-text {
+      align-items: flex-start;
+    }
+
+    #contact-form {
+      @include flex-group-col;
+      @include border-style($dark);
+      background-color: $light;
+      width: 100%;
+      align-items: flex-start;
+      border-radius: $spacing-medium;
+      padding: $spacing-large;
+      .grid-group {
+        .flex-group-col {
+          gap: $spacing-small;
+        }
+        width: 100%;
+        grid-template-columns: 1fr;
+        @include container-query(small) {
+          grid-template-columns: 1fr 1fr;
+        }
+        :last-child {
+          grid-column: 1 / -1;
+        }
+        label {
+          span {
+            color: #e00;
+            margin-bottom: 0.5rem;
+          }
+        }
+        input,
+        textarea {
+          width: 100%;
+          @include border-style($dark);
+          padding: 0.5rem;
+          border-radius: $border-radius-small;
+          &[type="text"] {
+            font-size: 1rem;
+            @include body-style;
+          }
+        }
+        textarea {
+          height: 12rem;
+          resize: vertical;
+          min-height: 6rem;
+          max-height: 20rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,143 @@
+---
+title: "Services"
+description: "Professional web design, development and branding"
+preloadImg: ""
+permalink: "services/"
+eleventyNavigation:
+  key: Services
+  order: 3
+---
+
+{% extends "layouts/base.html" %} {% block head %} {% endblock %} {% block body
+%}
+
+<!-- ============================================ -->
+<!--                    Landing                   -->
+<!-- ============================================ -->
+
+<section id="services">
+  <div class="container">
+    <div class="flex-group-col">
+      <div class="flex-text fade-in">
+        <p class="topper">Our Services</p>
+        <h1 class="title">Professional web design, development and branding</h1>
+      </div>
+      <p class="fade-in">
+        Discover how we can transform your online presence with our
+        comprehensive range of professional services, including bespoke web
+        design, advanced web development, and strategic branding solutions.
+        Designed for businesses looking to elevate their digital impact and
+        engage more effectively with their audience.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!--                   Services                   -->
+<!-- ============================================ -->
+
+<section id="web-design">
+  <div class="container">
+    <div class="flex-group-row">
+      <picture class="fade-in">
+        <source media="(max-width: 600px)" srcset="" />
+        <source media="(min-width: 601px)" srcset="" />
+        <img
+          aria-hidden="true"
+          decoding="async"
+          src="/assets/images/web-design-1.jpg"
+          alt="new home"
+          width="2500"
+          height="1667"
+          loading="eager"
+        />
+      </picture>
+      <div class="flex-group-col">
+        <div class="flex-text fade-in">
+          <p class="topper">Responsive</p>
+          <h2 class="title">Web Design that Drives Engagement</h2>
+        </div>
+        <p class="fade-in">
+          Craft pixel-perfect websites with us. Our responsive web designs
+          ensure that your site looks great and functions flawlessly across all
+          devices, enhancing user experience and boosting conversion rates. From
+          concept to launch, we focus on creating visually appealing and
+          user-friendly designs that reflect your brand’s ethos and meet your
+          business objectives.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="web-dev">
+  <div class="container">
+    <div class="flex-group-row">
+      <picture class="fade-in">
+        <source media="(max-width: 600px)" srcset="" />
+        <source media="(min-width: 601px)" srcset="" />
+        <img
+          aria-hidden="true"
+          decoding="async"
+          src="/assets/images/web-dev-1.jpg"
+          alt="new home"
+          width="2500"
+          height="1667"
+          loading="eager"
+        />
+      </picture>
+      <div class="flex-group-col">
+        <div class="flex-text fade-in">
+          <p class="topper">Expert</p>
+          <h2 class="title">Web Development for Dynamic Solutions</h2>
+        </div>
+        <p class="fade-in">
+          Unleash the full potential of your brand with our professional web
+          development services. Tailored to small businesses, we build stunning,
+          high-performance websites that are customized for optimal user
+          experience and designed to elevate your online presence.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="branding">
+  <div class="container">
+    <div class="flex-group-row">
+      <picture class="fade-in">
+        <source media="(max-width: 600px)" srcset="" />
+        <source media="(min-width: 601px)" srcset="" />
+        <img
+          aria-hidden="true"
+          decoding="async"
+          src="/assets/images/branding-1.jpg"
+          alt="new home"
+          width="2500"
+          height="1667"
+          loading="eager"
+        />
+      </picture>
+      <div class="flex-group-col">
+        <div class="flex-text fade-in">
+          <p class="topper">Professional</p>
+          <h2 class="title">Branding to Elevate Your Business</h2>
+        </div>
+        <p class="fade-in">
+          Create a memorable brand identity or redesign and refresh with our
+          expert branding services.
+        </p>
+        <p class="fade-in">
+          We specialize in crafting impactful, visually compelling brand
+          strategies that resonate with your target audience, differentiate you
+          from the competition, and foster brand loyalty. From logo design to
+          comprehensive brand narratives, our team delivers everything you need
+          to build and maintain a strong, recognizable brand.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include "components/cta.html" %} {% endblock %}

@@ -4,12 +4,38 @@
 
 <section id="cta">
   <div class="container">
-    <div class="flex-group-col">
-      <div class="flex-text fade-in">
-        <p class="topper">Ready for a change?</p>
-        <h3 class="title">Let's talk</h3>
+    <div class="flex-group-row">
+      <div class="flex-group-col">
+        <p class="topper">Start your project</p>
+        <h3 class="title">
+          Get in touch for customized, large-scale racking solutions
+        </h3>
+        <p>Call us at (613) 790–9112 for direct consultation.</p>
+        <p>
+          Or, fill out our quick form and we’ll get back to you within 24 hours.
+        </p>
       </div>
-      <a class="btn-solid fade-in" href="/contact">Drop a message</a>
+      <form
+        id="contact-form"
+        class="flex-group-col"
+        name="Contact Form"
+        method="post"
+        data-netlify="true"
+      >
+            <label for="name">Name <span>*</span></label>
+            <input required type="text" id="name" name="name" placeholder="" />
+            <label for="phone">Phone <span>*</span></label>
+            <input required type="tel" id="name" name="name" placeholder="" />
+            <label for="email">Email</label>
+            <input
+              type="text"
+              id="email"
+              name="email"
+              placeholder=""
+            />
+        </div>
+        <button class="btn-blk" type="submit">Request a call</button>
+      </form>
     </div>
   </div>
 </section>

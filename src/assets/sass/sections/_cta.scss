@@ -1,0 +1,16 @@
+@use "../styles/index" as *;
+
+#cta {
+  background-color: $acc-mint;
+
+  .flex-group-col {
+    align-items: flex-start;
+
+    .flex-text {
+      align-items: flex-start;
+      .title {
+        font-size: $fs-cta;
+      }
+    }
+  }
+}

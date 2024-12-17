@@ -1,0 +1,68 @@
+@use "../styles/index" as *;
+
+#hero {
+  padding: 6rem 2rem;
+  // &::after {
+  //   content: "";
+  //   position: absolute;
+  //   left: -2rem;
+  //   right: -2rem;
+  //   height: 4rem;
+  //   bottom: 16rem;
+  //   background: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0.75));
+  //   filter: blur(1rem);
+  // }
+
+  .hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 24rem;
+    background: url("/assets/images/hero.jpg") no-repeat center center;
+    background-size: cover;
+    z-index: -2;
+    @include container-query(large) {
+      bottom: 4rem;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5); /* dark overlay */
+      z-index: -1;
+    }
+  }
+  .container {
+    .flex-group-row {
+      flex-direction: column;
+      gap: 2rem;
+      .title {
+        font-size: $fs-xxl;
+        flex: 1.5;
+        @include container-query(medium) {
+          font-size: $fs-xxxxl;
+        }
+      }
+      .flex-group-col {
+        gap: 1rem;
+        .flex-text {
+          h2 {
+            font-size: $fs-m;
+          }
+        }
+        .flex-group-row {
+          width: 95%;
+          justify-content: center;
+        }
+      }
+
+      @include container-query(medium) {
+        flex-direction: row;
+      }
+    }
+  }
+}

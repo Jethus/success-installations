@@ -1,0 +1,37 @@
+@use "../styles/index" as *;
+
+#brands {
+  position: relative;
+  background-color: $dark;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: -2rem;
+    right: -2rem;
+    height: 6rem;
+    filter: blur(1rem);
+    z-index: -1;
+  }
+  &::before {
+    top: -4rem;
+    background: linear-gradient(to bottom, rgb(0, 0, 0, 0.75), rgb(0, 0, 0));
+  }
+  &::after {
+    bottom: -4rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgb(0, 0, 0));
+  }
+
+  .scrolling-brands {
+    display: flex;
+    overflow: hidden;
+    padding: 4rem;
+    .scrolling-inner {
+      display: flex;
+      gap: 3rem;
+      animation: marquee 30s linear infinite;
+      align-items: center;
+    }
+  }
+}

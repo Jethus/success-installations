@@ -1,0 +1,116 @@
+/*-- -------------------------- -->
+<---       SCSS Mixins          -->
+<--- -------------------------- -*/
+// required modules
+@use "sass:map";
+@use "sass:color";
+
+@use "vars" as *;
+@use "typography" as *;
+
+// Mixin for container query
+@mixin container-query($size) {
+  $query: map.get($breakpoints, $size);
+
+  @if $query {
+    @container (min-width: #{$query}) {
+      @content;
+    }
+  } @else {
+    @container (min-width: #{$size}) {
+      @content;
+    }
+  }
+}
+
+@mixin transition-fast($property) {
+  transition: $property 0.12s ease-in-out;
+}
+@mixin transition-slow($property) {
+  transition: $property 0.3s ease;
+}
+
+// _mixins.scss
+@mixin fade-in() {
+  opacity: 0;
+  transform: translateY(2rem);
+  &.visible {
+    animation: fade-in 1s ease forwards;
+  }
+}
+
+@mixin border-style($colour) {
+  border: 2px solid $colour;
+}
+
+@mixin focus-style($colour) {
+  outline: 2px solid $colour;
+}
+
+// Flexbox
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-group-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: $spacing-semi-large;
+}
+
+@mixin flex-group-col {
+  @include flex-group-row;
+  flex-direction: column;
+}
+
+// Grid
+@mixin grid-group {
+  display: grid;
+  gap: $spacing-medium;
+}
+
+@mixin drop-shadow {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+// btn styles
+@mixin btn-hover {
+  scale: 1.05;
+}
+
+@mixin btn-press($colour) {
+  transform: scale(0.95);
+  background-color: color.adjust($colour, $lightness: 5%);
+}
+
+@mixin btn-base {
+  @include header-style;
+  @include drop-shadow;
+  font-size: $fs-base;
+  font-weight: $bold-weight;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: $transition-default;
+
+  &:hover {
+    @include btn-hover;
+    cursor: pointer;
+  }
+
+  &:active {
+    @include btn-press($dark);
+  }
+
+  &:focus-visible {
+    @include focus-style($light);
+  }
+}
+
+@mixin btn-red {
+  @include btn-base;
+  color: $light;
+  background-color: $brand-primary;
+}
