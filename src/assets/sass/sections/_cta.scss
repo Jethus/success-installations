@@ -1,15 +1,51 @@
 @use "../styles/index" as *;
 
 #cta {
-  background-color: $acc-mint;
-
-  .flex-group-col {
-    align-items: flex-start;
-
-    .flex-text {
+  background-color: $acc-midgray;
+  .flex-group-row {
+    justify-content: center;
+    .flex-group-col {
       align-items: flex-start;
-      .title {
-        font-size: $fs-cta;
+      flex: 1 0 auto;
+      max-width: 50%;
+
+      .flex-text {
+        align-items: flex-start;
+      }
+    }
+  }
+
+  #contact-form {
+    background-color: $brand-primary;
+    padding: 2rem 3rem;
+    border-radius: 1rem;
+    max-width: 40%;
+    .flex-input {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      gap: 0.5rem;
+      .flex-group-row {
+        justify-content: flex-start;
+        align-items: center;
+        gap: 0.5rem;
+        svg {
+          width: 24px;
+          height: 24px;
+        }
+      }
+      label {
+        font-family: $header-font;
+        font-size: $fs-s;
+        span {
+          color: $acc-yellow;
+        }
+      }
+      input {
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+        border-radius: 0.5rem;
+        padding: 0.75rem 1rem;
+        border: none;
       }
     }
   }

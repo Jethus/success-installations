@@ -27,7 +27,6 @@
 
     #contact-form {
       @include flex-group-col;
-      @include border-style($dark);
       background-color: $light;
       width: 100%;
       align-items: flex-start;
@@ -54,7 +53,6 @@
         input,
         textarea {
           width: 100%;
-          @include border-style($dark);
           padding: 0.5rem;
           border-radius: $border-radius-small;
           &[type="text"] {

@@ -4,5 +4,41 @@
   background: url("/assets/images/authority01.jpg") no-repeat center center;
   background-size: cover;
   position: relative;
-  z-index: -2;
+  z-index: 1;
+  .container {
+    flex-direction: column;
+  }
+
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.66);
+    padding: 2rem;
+    margin: 2rem 35% 0 0;
+    border-radius: 0.5rem;
+    .emphasis {
+      font-size: calc($fs-xxxxl + 1rem);
+      color: $brand-secondary;
+      text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+      line-height: normal;
+    }
+  }
+
+  .flex-group-row {
+    align-items: stretch;
+    margin: 2rem 0 0;
+    .card {
+      @include flex-group-col;
+      background-color: $acc-cream;
+      color: $acc-blue;
+      padding: 2rem 1.5rem;
+      border-radius: 1rem;
+      justify-content: flex-start;
+      gap: 1rem;
+      text-align: center;
+      transform: translateY(100%);
+      ul {
+        padding: 0 1rem;
+        text-align: left;
+      }
+    }
+  }
 }

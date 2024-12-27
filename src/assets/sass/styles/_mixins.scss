@@ -39,10 +39,6 @@
   }
 }
 
-@mixin border-style($colour) {
-  border: 2px solid $colour;
-}
-
 @mixin focus-style($colour) {
   outline: 2px solid $colour;
 }
@@ -64,12 +60,6 @@
 @mixin flex-group-col {
   @include flex-group-row;
   flex-direction: column;
-}
-
-// Grid
-@mixin grid-group {
-  display: grid;
-  gap: $spacing-medium;
 }
 
 @mixin drop-shadow {
@@ -94,6 +84,7 @@
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   transition: $transition-default;
+  border: none;
 
   &:hover {
     @include btn-hover;
@@ -113,4 +104,10 @@
   @include btn-base;
   color: $light;
   background-color: $brand-primary;
+}
+
+@mixin btn-blk {
+  @include btn-base;
+  color: $light;
+  background-color: $dark;
 }

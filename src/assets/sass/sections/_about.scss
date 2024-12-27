@@ -23,7 +23,6 @@
     align-self: flex-start;
   }
   img {
-    @include border-style($dark);
     max-width: 400px;
     max-height: 400px;
   }

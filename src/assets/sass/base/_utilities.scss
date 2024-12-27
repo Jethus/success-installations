@@ -19,10 +19,6 @@
   @include flex-group-row;
 }
 
-.grid-group {
-  @include grid-group;
-}
-
 .flex-text {
   @include flex-group-col;
   gap: $spacing-small;
@@ -30,4 +26,8 @@
 
 .btn-red {
   @include btn-red;
+}
+
+.btn-blk {
+  @include btn-blk;
 }

@@ -2,17 +2,6 @@
 
 #hero {
   padding: 6rem 2rem;
-  // &::after {
-  //   content: "";
-  //   position: absolute;
-  //   left: -2rem;
-  //   right: -2rem;
-  //   height: 4rem;
-  //   bottom: 16rem;
-  //   background: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0.75));
-  //   filter: blur(1rem);
-  // }
-
   .hero-image {
     position: absolute;
     top: 0;
@@ -21,7 +10,6 @@
     bottom: 24rem;
     background: url("/assets/images/hero.jpg") no-repeat center center;
     background-size: cover;
-    z-index: -2;
     @include container-query(large) {
       bottom: 4rem;
     }
@@ -33,7 +21,6 @@
       right: 0;
       bottom: 0;
       background: rgba(0, 0, 0, 0.5); /* dark overlay */
-      z-index: -1;
     }
   }
   .container {
