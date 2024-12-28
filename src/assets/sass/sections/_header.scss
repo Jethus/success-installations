@@ -18,35 +18,20 @@
     position: absolute;
     inset: 0;
     height: 200%;
-
     backdrop-filter: blur(1rem);
     mask-image: linear-gradient(to bottom, black 0% 50%, transparent 50% 100%);
     pointer-events: none;
   }
 
   .backdrop-edge {
-    /* Set this to whatever you want for the edge thickness: */
     $thickness: 2px;
-
     position: absolute;
     inset: 0;
-    /*
-      Only a few pixels will be visible, but we’ll
-      set the height by 100% to include nearby elements.
-    */
     height: 100%;
-    /*
-      Shift down by 100% of its own height, so that the
-      edge stacks underneath the main <header>:
-    */
     transform: translateY(100%);
     background: hsl(0deg 0% 100% / 0.1);
     backdrop-filter: blur(8px) brightness(120%);
     pointer-events: none;
-    /*
-      We mask out everything aside from the first few
-      pixels, specified by the --thickness variable:
-    */
     mask-image: linear-gradient(
       to bottom,
       black 0,
@@ -163,41 +148,9 @@
           }
         }
       }
-
-      li {
-        opacity: 0;
-
-        a:not(:hover) {
-          color: $light;
-        }
-      }
-
-      .nav-wrapper {
-        display: flex;
-        gap: $spacing-xsmall;
-      }
-
-      @for $i from 1 through 3 {
-        .nav-wrapper:has([id$="-dropdown-toggle"]:checked)
-          ~ [id$="-dropdown"]
-          > li:nth-child(#{$i}) {
-          transition-delay: 0 + ($i * 0.1s);
-          transform: translateY(0);
-          opacity: 1;
-          pointer-events: auto;
-        }
-      }
-
-      @for $i from 3 through 1 {
-        [id$="-dropdown"] > li:nth-child(#{$i}) {
-          transition: transform (0.4s - ($i * 0.1s)) ease,
-            opacity (0.3s - ($i * 0.1s)) ease;
-          pointer-events: none;
-          transform: translateY(calc(-1.5em * $i));
-        }
-      }
     }
 
+    // Mobile Nav
     #menu-toggle:checked ~ #nav-menu {
       transform: translateX(0);
       pointer-events: auto;
@@ -229,20 +182,9 @@
       }
     }
 
-    #nav-contact {
-      display: none;
-    }
-
     @include container-query(medium) {
       .fries-btn {
         display: none;
-      }
-
-      #nav-contact {
-        display: block;
-      }
-      #mobile-nav-contact {
-        display: none !important;
       }
 
       #nav-menu {
@@ -258,6 +200,42 @@
         padding: 0;
         pointer-events: auto;
         color: $light;
+        font-size: $fs-s;
+
+        .nav-dropdown {
+          position: relative;
+          span {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            svg {
+              width: 16px;
+              height: 16px;
+              fill: $light;
+            }
+          }
+          > ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            background-color: $acc-darkgray;
+            width: auto;
+            white-space: nowrap;
+            padding: 1.25rem 1.5rem;
+            border-radius: 0.5rem;
+            text-align: left;
+            a {
+              display: block;
+            }
+          }
+          &:hover > ul {
+            display: block;
+          }
+        }
 
         & > li {
           opacity: 1;
@@ -266,11 +244,6 @@
             color: $light;
             transition: opacity 0s;
           }
-        }
-
-        [id$="-dropdown"],
-        .dropdown-toggle {
-          position: absolute;
         }
       }
     }

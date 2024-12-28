@@ -20,7 +20,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba(0, 0, 0, 0.5); /* dark overlay */
+      background: rgba(0, 0, 0, 0.6); /* dark overlay */
     }
   }
   .container {
@@ -36,6 +36,7 @@
       }
       .flex-group-col {
         gap: 1rem;
+        flex: 1.1;
         .flex-text {
           h2 {
             font-size: $fs-m;
