@@ -12,229 +12,303 @@ eleventyNavigation:
 {% extends "layouts/base.html" %} {% block head %} {% endblock %} {% block body
 %}
 
-<!-- ============================================ -->
-<!--                    LANDING                   -->
-<!-- ============================================ -->
+<!-- Racking Installation Landing -->
 
-<section id="intro">
+<section id="racking-installation">
   <div class="container">
-    <div class="flex-group-col">
-      <div class="flex-text fade-in">
-        <p class="topper">About Pixelboost</p>
-        <h1 class="title">Reimagining Web Design for Small Businesses</h1>
+    <div class="flex-group-row">
+      <picture class="fade-in">
+        <source media="(max-width: 600px)" srcset="" />
+        <source media="(min-width: 601px)" srcset="" />
+        <img
+          aria-hidden="true"
+          decoding="async"
+          src="/assets/images/peter.webp"
+          alt=""
+          loading="eager"
+          width="250"
+          height="250"
+        />
+      </picture>
+      <div class="flex-group-col">
+        <div class="flex-text fade-in">
+          <p class="topper">Racking Installation</p>
+          <h1 class="title">
+            Meet Peter, an Industry Leader in Racking Installation
+          </h1>
+        </div>
+        <p class="fade-in">
+          Peter, founder of Success Installations, has led the way in racking
+          installations across North America. Known for his hands-on approach
+          and commitment to excellence, Peter personally ensures that each
+          project meets the highest standards in quality, safety, and
+          efficiency.
+        </p>
+        <h2 class="title">Benefit from Peter’s Industry Experience</h2>
+        <ul>
+          <li>
+            <strong>Industry Leader</strong><br />
+            Decades of expertise in large-scale, complex racking installations.
+          </li>
+          <li>
+            <strong>Professional Crew</strong><br />
+            Certified, skilled team dedicated to safe, precise installations.
+          </li>
+          <li>
+            <strong>Direct Access</strong><br />
+            Work directly with Peter for honest, reliable service.
+          </li>
+        </ul>
+        <p class="fade-in">
+          For tailored advice on your next project, contact Peter directly at
+          <a href="tel:6137909112">(613) 790–9112</a> or
+          <a href="/contact">submit a request for a callback</a>.
+        </p>
       </div>
-      <p class="fade-in">
-        Hello there! My name is Josh, and I started Pixelboost with a clear
-        mission: to change the game for small businesses seeking high-quality
-        web design.
-      </p>
-      <p class="fade-in">
-        I’m not only committed to making services affordable, but also to
-        building lasting partnerships where quality is assured. You deserve a
-        website that’s swift, seamless, and a true extension of your brand,
-        without the strain on your resources.
-      </p>
-      <p class="fade-in">
-        Let’s navigate the web design journey together, with transparent pricing
-        and a commitment to excellence that puts your business first.
-      </p>
     </div>
   </div>
 </section>
 
-<!-- ============================================ -->
-<!--                   Gallery                    -->
-<!-- ============================================ -->
-
-<section id="gallery">
-  <div class="cs-container">
-    <div class="cs-image-group">
-      <!-- Row 1-->
-      <div class="cs-row cs-row-1">
-        <picture class="cs-picture cs-picture1">
-          <source
-            media="(max-width: 600px)"
-            srcset="/assets/images/portfolio/port1-m.jpg"
-          />
-          <source
-            media="(min-width: 601px)"
-            srcset="/assets/images/portfolio/port1.jpg"
-          />
-          <img
-            aria-hidden="true"
-            decoding="async"
-            src="/assets/images/portfolio/port1.jpg"
-            alt="new hallway"
-            loading="lazy"
-            width="400"
-            height="560"
-          />
-        </picture>
-        <picture class="cs-picture cs-picture2">
-          <source
-            media="(max-width: 600px)"
-            srcset="/assets/images/portfolio/port4-m.jpg"
-          />
-          <source
-            media="(min-width: 601px)"
-            srcset="/assets/images/portfolio/port4.jpg"
-          />
-          <img
-            aria-hidden="true"
-            decoding="async"
-            src="/assets/images/portfolio/port4.jpg"
-            alt="new home construction"
-            loading="lazy"
-            width="400"
-            height="560"
-          />
-        </picture>
-        <picture class="cs-picture cs-picture3">
-          <source
-            media="(max-width: 600px)"
-            srcset="/assets/images/portfolio/port7-m.jpg"
-          />
-          <source
-            media="(min-width: 601px)"
-            srcset="/assets/images/portfolio/port7.jpg"
-          />
-          <img
-            aria-hidden="true"
-            decoding="async"
-            src="/assets/images/portfolio/port7.jpg"
-            alt="building a new wall"
-            loading="lazy"
-            width="400"
-            height="560"
-          />
-        </picture>
-        <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout-->
+<section id="installation-types">
+  <div class="container">
+    <div class="flex-group-col">
+      <div class="flex-text fade-in">
+        <p class="topper">Services</p>
+        <h1 class="title">Installation Types</h1>
       </div>
-      <!-- Row 2 -->
-      <div class="cs-row cs-row-2">
-        <picture class="cs-picture cs-picture1">
-          <source
-            media="(max-width: 600px)"
-            srcset="/assets/images/portfolio/port2-m.jpg"
-          />
-          <source
-            media="(min-width: 601px)"
-            srcset="/assets/images/portfolio/port2.jpg"
-          />
-          <img
-            aria-hidden="true"
-            decoding="async"
-            src="/assets/images/portfolio/port2.jpg"
-            alt="new kitchen"
-            loading="lazy"
-            width="400"
-            height="560"
-          />
-        </picture>
-        <picture class="cs-picture cs-picture2">
-          <source
-            media="(max-width: 600px)"
-            srcset="/assets/images/portfolio/port5-m.jpg"
-          />
-          <source
-            media="(min-width: 601px)"
-            srcset="/assets/images/portfolio/port5.jpg"
-          />
-          <img
-            aria-hidden="true"
-            decoding="async"
-            src="/assets/images/portfolio/port5.jpg"
-            alt="apartment addition"
-            loading="lazy"
-            width="400"
-            height="560"
-          />
-        </picture>
-        <picture class="cs-picture cs-picture3">
-          <source
-            media="(max-width: 600px)"
-            srcset="/assets/images/portfolio/port8-m.jpg"
-          />
-          <source
-            media="(min-width: 601px)"
-            srcset="/assets/images/portfolio/port8.jpg"
-          />
-          <img
-            aria-hidden="true"
-            decoding="async"
-            src="/assets/images/portfolio/port8.jpg"
-            alt="kew kitchen cabinets"
-            loading="lazy"
-            width="400"
-            height="560"
-          />
-        </picture>
-        <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout-->
-      </div>
-      <!-- Row 3 -->
-      <div class="cs-row cs-row-3">
-        <picture class="cs-picture cs-picture1">
-          <source
-            media="(max-width: 600px)"
-            srcset="/assets/images/portfolio/port3-m.jpg"
-          />
-          <source
-            media="(min-width: 601px)"
-            srcset="/assets/images/portfolio/port3.jpg"
-          />
-          <img
-            aria-hidden="true"
-            decoding="async"
-            src="/assets/images/portfolio/port3.jpg"
-            alt="new kitchen"
-            loading="lazy"
-            width="400"
-            height="560"
-          />
-        </picture>
-        <picture class="cs-picture cs-picture2">
-          <source
-            media="(max-width: 600px)"
-            srcset="/assets/images/portfolio/port6-m.jpg"
-          />
-          <source
-            media="(min-width: 601px)"
-            srcset="/assets/images/portfolio/port6.jpg"
-          />
-          <img
-            aria-hidden="true"
-            decoding="async"
-            src="/assets/images/portfolio/port6.jpg"
-            alt="apartment addition"
-            loading="lazy"
-            width="400"
-            height="560"
-          />
-        </picture>
-        <picture class="cs-picture cs-picture3">
-          <source
-            media="(max-width: 600px)"
-            srcset="/assets/images/portfolio/port9-m.jpg"
-          />
-          <source
-            media="(min-width: 601px)"
-            srcset="/assets/images/portfolio/port9.jpg"
-          />
-          <img
-            aria-hidden="true"
-            decoding="async"
-            src="/assets/images/portfolio/port9.jpg"
-            alt="kew kitchen cabinets"
-            loading="lazy"
-            width="400"
-            height="560"
-          />
-        </picture>
-
-        <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout-->
-      </div>
+      <ul class="card-list">
+        <li class="card">
+          <div class="flex-group-row">
+            <svg></svg>
+            <svg></svg>
+          </div>
+          <div class="flex-group-col">
+            <h2 class="title">Selective Racking</h2>
+            <p>
+              The most versatile and widely used racking system, allowing for
+              easy access to individual pallets.
+            </p>
+          </div>
+          <div class="flex-group-col details">
+            <h3 class="title">Features</h3>
+            <ul>
+              <li>Structural racking supports loads up to 50 ft high.</li>
+              <li>Reduces the need for additional warehouse buildings.</li>
+              <li>Designed to withstand heavy-duty storage requirements.</li>
+            </ul>
+            <h3 class="title">Best For</h3>
+            <p>
+              Large-scale facilities requiring significant vertical storage.
+            </p>
+          </div>
+        </li>
+        <li class="card">
+          <div class="flex-group-row">
+            <svg></svg>
+            <svg></svg>
+          </div>
+          <div class="flex-group-col">
+            <h2 class="title">Double Deep</h2>
+            <p>
+              Maximizes storage capacity by doubling pallets in a single row,
+              perfect for high-density storage.
+            </p>
+          </div>
+          <div class="flex-group-col details">
+            <h3 class="title">Features</h3>
+            <ul>
+              <li>
+                Maximizes storage density by placing pallets two rows deep.
+              </li>
+              <li>
+                Increases storage capacity without expanding warehouse space.
+              </li>
+              <li>
+                Reduces aisle space while maintaining efficient stock flow.
+              </li>
+            </ul>
+            <h3 class="title">Best For</h3>
+            <p>Facilities with fewer SKUs and high pallet volumes per SKU.</p>
+          </div>
+        </li>
+        <li class="card">
+          <div class="flex-group-row">
+            <svg></svg>
+            <svg></svg>
+          </div>
+          <div class="flex-group-col">
+            <h2 class="title">Rack Buildings</h2>
+            <p>
+              Integrated racking structures that maximize vertical space, built
+              directly into warehouse facilities.
+            </p>
+          </div>
+          <div class="flex-group-col details">
+            <h3 class="title">Features</h3>
+            <ul>
+              <li>Structural racking supports loads up to 50 ft high.</li>
+              <li>
+                Optimizes available space for diverse product sizes and types.
+              </li>
+              <li>
+                Easily adaptable to future growth or changing inventory
+                requirements.
+              </li>
+            </ul>
+            <h3 class="title">Best For</h3>
+            <p>Warehouses needing adaptable storage for varied products.</p>
+          </div>
+        </li>
+        <li class="card">
+          <div class="flex-group-row">
+            <svg></svg>
+            <svg></svg>
+          </div>
+          <div class="flex-group-col">
+            <h2 class="title">Storage Racking</h2>
+            <p>
+              Flexible racking options designed to accommodate varied storage
+              needs and sizes.
+            </p>
+          </div>
+          <div class="flex-group-col details">
+            <h3 class="title">Features</h3>
+            <ul>
+              <li>
+                Flexible configurations to fit various warehouse layouts and
+                needs.
+              </li>
+              <li>
+                Optimizes available space for diverse product sizes and types.
+              </li>
+              <li>
+                Easily adaptable to future growth or changing inventory
+                requirements.
+              </li>
+            </ul>
+            <h3 class="title">Best For</h3>
+            <p>Warehouses needing adaptable storage for varied products.</p>
+          </div>
+        </li>
+        <li class="card">
+          <div class="flex-group-row">
+            <svg></svg>
+            <svg></svg>
+          </div>
+          <div class="flex-group-col">
+            <h2 class="title">Mezzanine Installations</h2>
+            <p>
+              The most versatile and widely used racking system, allowing for
+              easy access to individual pallets.
+            </p>
+          </div>
+          <div class="flex-group-col details">
+            <h3 class="title">Features</h3>
+            <ul>
+              <li>
+                Adds additional storage levels to maximize vertical space.
+              </li>
+              <li>
+                Includes integrated safety features like handrails and stairs.
+              </li>
+              <li>
+                Can be combined with conveyor systems for streamlined workflows.
+              </li>
+            </ul>
+            <h3 class="title">Best For</h3>
+            <p>
+              Warehouses needing extra storage without increasing floor space.
+            </p>
+          </div>
+        </li>
+        <li class="card">
+          <div class="flex-group-row">
+            <svg></svg>
+            <svg></svg>
+          </div>
+          <div class="flex-group-col">
+            <h2 class="title">Shuttle Systems</h2>
+            <p>
+              The most versatile and widely used racking system, allowing for
+              easy access to individual pallets.
+            </p>
+          </div>
+          <div class="flex-group-col details">
+            <h3 class="title">Features</h3>
+            <ul>
+              <li>
+                Automates pallet movement to reduce manual labor and forklift
+                travel.
+              </li>
+              <li>
+                Provides high-density storage with efficient pallet retrieval.
+              </li>
+              <li>
+                Improves inventory handling with faster loading and unloading.
+              </li>
+            </ul>
+            <h3 class="title">Best For</h3>
+            <p>
+              High-volume facilities prioritizing automation and efficiency.
+            </p>
+          </div>
+        </li>
+        <li class="card">
+          <div class="flex-group-row">
+            <svg></svg>
+            <svg></svg>
+          </div>
+          <div class="flex-group-col">
+            <h2 class="title">Cantilever</h2>
+            <p>
+              Ideal for storing long, bulky items like lumber, pipes, and other
+              oversized materials.a
+            </p>
+          </div>
+          <div class="flex-group-col details">
+            <h3 class="title">Features</h3>
+            <ul>
+              <li>
+                Open-front design for easy storage and retrieval of long items.
+              </li>
+              <li>
+                Adjustable arms to handle products of varying lengths and
+                weights.
+              </li>
+              <li>
+                Ideal for oversized, irregularly shaped, or bulky materials.
+              </li>
+            </ul>
+            <h3 class="title">Best For</h3>
+            <p>
+              Facilities handling lumber, pipes, or other long, heavy items.
+            </p>
+          </div>
+        </li>
+        <li class="card">
+          <div class="flex-group-row">
+            <svg></svg>
+            <svg></svg>
+          </div>
+          <div class="flex-group-col">
+            <h2 class="title">Maintenance & Inspection</h2>
+            <p>Extends the lifespan of racking systems with regular upkeep.</p>
+          </div>
+          <div class="flex-group-col details">
+            <h3 class="title">Features</h3>
+            <ul>
+              <li>
+                Extends the lifespan of racking systems with regular upkeep.
+              </li>
+              <li>Ensures compliance with safety standards and regulations.</li>
+              <li>Minimizes downtime by preventing structural failures.</li>
+            </ul>
+            <h3 class="title">Best For</h3>
+            <p>Warehouses focused on safety and long-term durability.</p>
+          </div>
+        </li>
+      </ul>
     </div>
-    <a href="/contact" class="cs-button-solid">Get Free Quote</a>
   </div>
 </section>
 
