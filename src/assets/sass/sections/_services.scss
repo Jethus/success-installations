@@ -27,7 +27,7 @@
       }
     }
     span {
-      font-size: $fs-l;
+      @include fluid-type(4);
       font-weight: $bold-weight;
       position: absolute;
       right: 1rem;

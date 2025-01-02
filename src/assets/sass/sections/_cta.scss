@@ -20,6 +20,7 @@
     padding: 2rem 3rem;
     border-radius: 1rem;
     max-width: 40%;
+    @include drop-shadow;
     .flex-input {
       display: flex;
       flex-direction: column;
@@ -35,8 +36,8 @@
         }
       }
       label {
+        @include fluid-type(1);
         font-family: $header-font;
-        font-size: $fs-s;
         span {
           color: $acc-yellow;
         }

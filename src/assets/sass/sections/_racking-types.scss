@@ -1,0 +1,39 @@
+@use "../styles/index" as *;
+
+#racking-types {
+  background-color: $acc-brown;
+  .card-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    .card {
+      background-color: $acc-darkgray;
+      list-style: none;
+      border-radius: 0.5rem;
+      display: flex;
+      gap: 2rem;
+      flex-direction: column;
+      padding: 2.5rem;
+      width: 100%;
+      flex: 1;
+      .flex-group-col {
+        align-items: flex-start;
+        gap: 0.5rem;
+        .flex-group-row {
+          width: 100%;
+        }
+      }
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 0.5rem;
+      }
+      svg {
+        width: 32px;
+        height: 32px;
+        fill: $light;
+        transform: rotate(-90deg);
+      }
+    }
+  }
+}

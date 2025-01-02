@@ -1,6 +1,6 @@
 ---
 title: "Gallery"
-description: "Meta description for the page"
+description: "Explore our completed racking projects, from large-scale warehouse installations to custom storage solutions, and see how we maximize storage potential."
 preloadImg: ""
 permalink: "gallery/"
 eleventyNavigation:
@@ -8,142 +8,54 @@ eleventyNavigation:
   order: 1
 ---
 
-{% extends "layouts/base.html" %} {% block head %} {% endblock %} {% block body
-%}
+{% extends "layouts/base.html" %} {% block head %}
+
+<script src="/assets/js/gallery.js" defer></script>
+
+{% endblock %} {% block body %}
 
 <!-- ============================================ -->
 <!--                    Landing                   -->
 <!-- ============================================ -->
 
-<section id="about">
-  <div class="container">
-    <div class="flex-group-row">
-      <picture class="fade-in">
-        <source media="(max-width: 600px)" srcset="" />
-        <source media="(min-width: 601px)" srcset="" />
-        <img
-          aria-hidden="true"
-          decoding="async"
-          src="/assets/images/Josh-crop.webp"
-          alt="headshot of me"
-          loading="eager"
-          width="250"
-          height="250"
-        />
-      </picture>
-      <div class="flex-group-col">
-        <div class="flex-text fade-in">
-          <p class="topper">About Pixelboost</p>
-          <h1 class="title">Reimagining Web Design for Small Businesses</h1>
-        </div>
-        <p class="fade-in">
-          Hello there! My name is Josh, and I started Pixelboost with a clear
-          mission: to change the game for small businesses seeking high-quality
-          web design.
-        </p>
-        <p class="fade-in">
-          I’m not only committed to making services affordable, but also to
-          building lasting partnerships where quality is assured. You deserve a
-          website that’s swift, seamless, and a true extension of your brand,
-          without the strain on your resources.
-        </p>
-        <p class="fade-in">
-          Let’s navigate the web design journey together, with transparent
-          pricing and a commitment to excellence that puts your business first.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================ -->
-<!--                Why Choose Us                 -->
-<!-- ============================================ -->
-
-<section id="why-choose-us">
+<section id="gallery-intro">
   <div class="container">
     <div class="flex-group-col">
       <div class="flex-text fade-in">
-        <p class="topper">Why choose us?</p>
-        <h2 class="title">What makes us unique</h2>
+        <p class="topper">Gallery</p>
+        <h1 class="title">See the work we’ve done</h1>
       </div>
-      <div class="flex-group-row fade-in">
-        <div class="card">
-          <img
-            loading="lazy"
-            decoding="async"
-            src="/assets/images/light-bulb.png"
-            alt=""
-            width="80"
-            height="80"
-          />
-          <h3>Content tailored for your brand</h3>
-          <p>
-            Crafting bespoke narratives that celebrate your brand's
-            individuality. Your business's story is distinct—let's tell it in a
-            way that captivates and connects.
-          </p>
-        </div>
-
-        <div class="card">
-          <img
-            loading="lazy"
-            decoding="async"
-            src="/assets/images/help.png"
-            alt=""
-            width="80"
-            height="80"
-          />
-          <h3>Personalized support, directly from the source</h3>
-          <p>
-            Experience the warmth of human connection in customer service. Have
-            a question or need a hand? I'm here, ready to assist—not an
-            automated response, but the person who knows your project inside
-            out.
-          </p>
-        </div>
-        <div class="card">
-          <img
-            loading="lazy"
-            decoding="async"
-            src="/assets/images/eye.png"
-            alt=""
-            width="80"
-            height="80"
-          />
-          <h3>Design which echos your vision</h3>
-          <p>
-            Your vision is our blueprint. We bring flexibility to design,
-            ensuring every element is a reflection of your brand's personality
-            and ambition. Customization without constraints, for a digital space
-            that's unequivocally yours.
-          </p>
-        </div>
-      </div>
+      <p class="fade-in">
+        Explore our portfolio of completed racking projects, showcasing the
+        precision, innovation, and quality that define our work.
+      </p>
+      <p class="fade-in">
+        From large-scale warehouse installations to custom storage solutions,
+        see how we’ve helped businesses across North America maximize their
+        storage potential.
+      </p>
     </div>
   </div>
 </section>
 
-<!-- ============================================ -->
-<!--                 What else?                   -->
-<!-- ============================================ -->
-
-<section id="what-else">
+<section id="gallery">
   <div class="container">
     <div class="flex-group-col">
-      <div class="flex-text fade-in">
-        <p class="topper">What else do you do?</p>
-        <h2 class="title">Our capabilities</h2>
+      <h2 class="title">Our Gallery</h2>
+      <div class="gallery-grid" id="imageGrid">
+        {% for image in gallery %}
+        <img src="{{ image }}" class="gallery-item" loading="lazy" />
+        {% endfor %}
       </div>
-      <div class="flex-group-wrap fade-in">
-        <p>Web Development</p>
-        <p>Web Design</p>
-        <p>Branding</p>
-        <p>Print Design</p>
-        <p>Search Engine Optimization</p>
-      </div>
+      <button id="loadMoreBtn" class="btn-red">See More</button>
     </div>
   </div>
 </section>
+
+<!-- Lightbox Modal (hidden by default) -->
+<div id="lightboxModal" class="lightbox-modal" hidden>
+  <span id="lightboxClose" class="lightbox-close">&times;</span>
+  <img id="lightboxImage" />
+</div>
 
 {% include "components/cta.html" %} {% endblock %}

@@ -1,0 +1,38 @@
+@use "../styles/index" as *;
+
+#nas {
+  background-color: $acc-blue;
+
+  .flex-group-col {
+    align-items: flex-start;
+
+    .card-list {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      .card {
+        display: flex;
+        padding: 1.5rem 3rem;
+        background-color: $acc-cream;
+        border-left: $nas-red 0.5rem solid;
+        border-radius: 0.5rem;
+        justify-content: space-between;
+        align-items: center;
+        list-style: none;
+        &:nth-child(2n) {
+          background-color: $acc-yellow-cream;
+        }
+        .flex-text {
+          align-items: flex-start;
+          color: $dark;
+        }
+        svg {
+          width: 80px;
+          height: 80px;
+        }
+      }
+    }
+  }
+}

@@ -12,10 +12,10 @@
   .overlay {
     background-color: rgba(0, 0, 0, 0.66);
     padding: 2rem;
-    margin: 2rem 35% 0 0;
+    margin: 2rem 40% 0 0;
     border-radius: 0.5rem;
     .emphasis {
-      font-size: calc($fs-xxxxl + 1rem);
+      @include fluid-type(7);
       color: $brand-secondary;
       text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
       line-height: normal;

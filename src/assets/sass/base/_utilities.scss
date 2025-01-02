@@ -21,7 +21,7 @@
 
 .flex-text {
   @include flex-group-col;
-  gap: $spacing-small;
+  gap: 0.5rem;
 }
 
 .btn-red {
@@ -30,4 +30,8 @@
 
 .btn-blk {
   @include btn-blk;
+}
+
+.full-bleed {
+  @include full-bleed;
 }

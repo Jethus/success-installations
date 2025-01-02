@@ -75,7 +75,7 @@
       width: 4rem;
       height: 4rem;
       gap: 8px;
-      padding: $spacing-small;
+      padding: 0.25rem;
       position: relative;
       z-index: 3;
 
@@ -99,7 +99,7 @@
         width: 100%;
         height: 5px;
         background-color: $dark;
-        border-radius: $border-radius-medium;
+        border-radius: 0.5rem;
         transition: all 0.3s ease-in-out;
         z-index: 3;
         align-self: flex-end;
@@ -121,9 +121,8 @@
       width: calc(45vw + 4rem);
       height: 100vh;
       background-color: rgba(0, 0, 0, 0.8);
-      backdrop-filter: blur($spacing-small);
+      backdrop-filter: blur(0.25rem);
       list-style: none;
-      font-size: $fs-m;
       font-weight: $bold-weight;
       text-align: right;
       padding: 90px 2rem 2rem;
@@ -133,7 +132,6 @@
       z-index: 2;
       justify-content: flex-end;
       @include container-query(large) {
-        font-size: $fs-s;
       }
 
       .nav-item.contact {
@@ -190,7 +188,7 @@
       #nav-menu {
         height: auto;
         flex-direction: row;
-        gap: $spacing-large;
+        gap: 2rem;
         flex: 1;
         position: relative;
         background-color: transparent;
@@ -200,7 +198,9 @@
         padding: 0;
         pointer-events: auto;
         color: $light;
-        font-size: $fs-s;
+        li {
+          @include fluid-type(1.25);
+        }
 
         .nav-dropdown {
           position: relative;
@@ -223,14 +223,12 @@
             padding: 0;
             list-style: none;
             background-color: $acc-darkgray;
+            border: $acc-cream 1px solid;
             width: auto;
             white-space: nowrap;
             padding: 1.25rem 1.5rem;
             border-radius: 0.5rem;
             text-align: left;
-            a {
-              display: block;
-            }
           }
           &:hover > ul {
             display: block;

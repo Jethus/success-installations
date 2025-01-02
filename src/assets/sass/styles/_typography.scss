@@ -1,7 +1,8 @@
-/*-- -------------------------- -->
-<---       SCSS Typeography     -->
-<--- -------------------------- -*/
+/*$ $$$$$$$$$$$$$ $>
+<$-       SCSS Typeography     $>
+<$- $$$$$$$$$$$$$ -*/
 @use "vars" as *;
+@use "sass:math";
 
 /* merriweather-regular - latin */
 @font-face {
@@ -50,16 +51,79 @@
     format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
-$fs-cta: clamp(4rem, 10vw, 7rem); // 64-128px
-$fs-xxxxl: clamp(3.75rem, 7vw, 5rem); // 64-96px
-$fs-xxxl: clamp(3.5rem, 6vw, 4rem); // 60-72px
-$fs-xxl: clamp(3rem, 5vw, 3.5rem); // 48-60px
-$fs-xl: clamp(2.5rem, 4vw, 3rem); // 40-48px
-$fs-l: clamp(1.875rem, 3vw, 2.5rem); // 30-40px
-$fs-m: clamp(1.5rem, 2vw, 1.875rem); // 20-30px
-$fs-s: clamp(1.125rem, 1.5vw, 1.5rem); // 18-24px
-$fs-base: clamp(1rem, 1.25vw, 1.125rem); // 16-18px
-$fs-xs: clamp(0.875rem, 1.25vw, 1rem); // 14-16px
+// .SCSS Fluid Text Scaling
+
+$font-size-min: 16; // px at $viewport-min
+$font-size-max: 22; // px at $viewport-max
+$font-ratio-min: 1.25; // ratio at smallest
+$font-ratio-max: 1.3333; // ratio at largest
+$viewport-min: 320; // px for min size
+$viewport-max: 1500; // px for max size
+
+@mixin fluid-type($fl: 0) {
+  // Calculate min/max in px for this "fluid level"
+  $fluid-min: $font-size-min * math.pow($font-ratio-min, $fl);
+  $fluid-max: $font-size-max * math.pow($font-ratio-max, $fl);
+
+  // Growth rate (px per 1px of viewport width)
+  $fluid-preferred: math.div(
+    ($fluid-max - $fluid-min),
+    ($viewport-max - $viewport-min)
+  );
+
+  // Convert px -> rem with `math.div(..., 16)` and wrap the tricky part in calc()
+  font-size: clamp(
+    #{math.div($fluid-min, 16)}rem,
+    calc(
+      #{math.div($fluid-min, 16)}rem +
+        (#{$fluid-preferred} * (100vw - #{$viewport-min}px)) / 16
+    ),
+    #{math.div($fluid-max, 16)}rem
+  );
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li,
+textarea,
+input,
+select,
+button,
+th,
+td {
+  @include fluid-type(0);
+}
+
+h1,
+.h1 {
+  @include fluid-type(5);
+}
+
+h2,
+.h2 {
+  @include fluid-type(4);
+}
+
+h3,
+.h3 {
+  @include fluid-type(3);
+}
+
+h4,
+.h4 {
+  @include fluid-type(2);
+}
+
+h5,
+.h5 {
+  @include fluid-type(1);
+}
 
 $line-height: calc(4px + 2ex + 4px);
 
@@ -89,35 +153,6 @@ $black-weight: 900;
   line-height: $line-height-normal;
 }
 
-@mixin link-style($colour) {
-  color: $colour;
-
-  &:hover {
-    color: $brand-primary;
-  }
-}
-
-// Text styles
-h1 {
-  font-size: $fs-xxl;
-}
-
-h2 {
-  font-size: $fs-xl;
-}
-
-h3 {
-  font-size: $fs-l;
-}
-
-h4 {
-  font-size: $fs-m;
-}
-
-h5 {
-  font-size: $fs-s;
-}
-
 h1,
 h2,
 h3,
@@ -126,29 +161,49 @@ h5 {
   @include header-style;
 }
 
-p,
-ul,
-label,
-input {
-  font-size: $fs-base;
-}
-
 a {
   text-decoration: none;
 }
 
-a:not([class*="btn"]) {
-  @include link-style($brand-secondary);
-  transition: $transition-default;
+a:not([class*="btn"]):not(.skip):not(.logo) {
+  position: relative;
+  color: $brand-secondary;
+  transition: transform 0.12s ease-in-out, color 0.12s ease-in-out;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: currentColor;
+    transform: scaleX(0); /* hidden by default */
+    transform-origin: left; /* animate left to right */
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
+  &:hover {
+    color: $brand-secondary !important;
+    svg {
+      fill: $brand-secondary !important;
+    }
+  }
+  &:hover::after {
+    transform: scaleX(1);
+  }
 }
 
 .topper {
+  @include fluid-type(-1);
   align-self: flex-start;
-  font-size: $fs-xs;
   font-weight: $bold-weight;
   line-height: $line-height-small;
   text-transform: uppercase;
   letter-spacing: $letter-spacing-wide;
   color: $acc-yellow;
   display: block;
+}
+
+input,
+textarea {
+  font-family: $body-font;
 }
