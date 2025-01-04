@@ -1,0 +1,148 @@
+/*-- -------------------------- -->
+<---       SCSS Mixins          -->
+<--- -------------------------- -*/
+// required modules
+@use "sass:map";
+@use "sass:color";
+@use "sass:list";
+@use "sass:string";
+
+@use "vars" as *;
+@use "typography" as *;
+
+// Mixin for container query
+@mixin container-query($size) {
+  $query: map.get($breakpoints, $size);
+
+  @if $query {
+    @container (min-width: #{$query}) {
+      @content;
+    }
+  } @else {
+    @container (min-width: #{$size}) {
+      @content;
+    }
+  }
+}
+
+@mixin transition-fast($properties...) {
+  $transitions: ();
+
+  @each $prop in $properties {
+    $transitions: list.append(
+      $transitions,
+      string.unquote("#{ $prop } 0.12s ease-in-out"),
+      $separator: comma
+    );
+  }
+
+  transition: $transitions;
+}
+
+@mixin transition-slow($properties...) {
+  $transitions: ();
+
+  @each $prop in $properties {
+    $transitions: list.append(
+      $transitions,
+      string.unquote("#{ $prop } 0.3s ease"),
+      $separator: comma
+    );
+  }
+
+  transition: $transitions;
+}
+
+// _mixins.scss
+@mixin fade-in() {
+  opacity: 0;
+  transform: translateY(2rem);
+  &.visible {
+    animation: fade-in 1s ease forwards;
+  }
+}
+
+@mixin focus-style($colour) {
+  outline: 2px solid $colour;
+}
+
+// Flexbox
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-group-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+@mixin flex-group-col {
+  @include flex-group-row;
+  flex-direction: column;
+}
+
+@mixin drop-shadow {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+// btn styles
+@mixin btn-hover {
+  transform: scale(1.05);
+}
+
+@mixin btn-press($colour) {
+  transform: scale(0.95);
+  background-color: color.adjust($colour, $lightness: 10%);
+}
+
+@mixin btn-base {
+  @include header-style;
+  @include drop-shadow;
+  @include fluid-type(1);
+  @include transition-fast(background-color, transform);
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  white-space: nowrap;
+  border: none;
+
+  &:hover {
+    @include btn-hover;
+    cursor: pointer;
+  }
+
+  &:focus-visible {
+    @include focus-style($light);
+  }
+}
+
+@mixin btn-red {
+  @include btn-base;
+  color: $light;
+  background-color: $brand-primary;
+  &:active {
+    @include btn-press($brand-primary);
+  }
+}
+
+@mixin btn-blk {
+  @include btn-base;
+  color: $light;
+  background-color: $dark;
+  &:active {
+    @include btn-press($dark);
+  }
+}
+
+@mixin full-bleed {
+  max-width: 100vw;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}

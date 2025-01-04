@@ -1,0 +1,32 @@
+/*-- -------------------------- -->
+<---       SCSS Variables       -->
+<--- -------------------------- -*/
+// SCSS variables/mixins/functions
+$brand-primary: #7e0000;
+$brand-secondary: #ff5900;
+$acc-yellow: #ffd500;
+$acc-blue: #2c3e50;
+$acc-brown: #615544;
+$acc-yellow-cream: #ffe2b2;
+$acc-cream: #ede3d7;
+$acc-midgray: #353535;
+$acc-darkgray: #202020;
+$dark: #000;
+$light: #fff;
+$nas-red: #e4002b;
+
+/* 60px - 100px top and bottom */
+$container-padding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
+
+// Content width
+$content-width: 80em;
+
+// Mixins for container responsive design
+// Define a map of breakpoints
+$breakpoints: (
+  x-small: 16rem,
+  small: 32rem,
+  medium: 48rem,
+  large: 64rem,
+  max: 76rem,
+);

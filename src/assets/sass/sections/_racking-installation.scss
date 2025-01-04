@@ -1,0 +1,29 @@
+@use "../styles/index" as *;
+
+#racking-installation {
+  background-color: $acc-darkgray;
+  padding: 0;
+  .flex-group-row {
+    gap: 3rem;
+    .hero img {
+      border-right: $acc-yellow 0.5rem solid;
+      max-height: 60rem;
+      object-position: top;
+    }
+    .flex-group-col {
+      align-items: flex-start;
+      ul {
+        list-style: none;
+        li {
+          margin-bottom: 1rem;
+        }
+      }
+      img {
+        width: 300px;
+      }
+      & > *:not(img) {
+        padding-right: 16rem;
+      }
+    }
+  }
+}

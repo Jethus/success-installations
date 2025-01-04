@@ -23,3 +23,20 @@ const initializeFadeIn = () => {
 };
 
 document.addEventListener("DOMContentLoaded", initializeFadeIn);
+
+document.getElementById("phone").addEventListener("input", function (e) {
+  let input = e.target.value.replace(/\D/g, ""); // Remove all non-numeric characters
+  let formatted = "";
+
+  if (input.length > 0) {
+    formatted += input.substring(0, 3); // First three digits
+  }
+  if (input.length > 3) {
+    formatted += " - " + input.substring(3, 6); // Next three digits
+  }
+  if (input.length > 6) {
+    formatted += " - " + input.substring(6, 10); // Final four digits
+  }
+
+  e.target.value = formatted; // Update the input field
+});

@@ -1,0 +1,61 @@
+---
+title: "Gallery"
+description: "Explore our completed racking projects, from large-scale warehouse installations to custom storage solutions, and see how we maximize storage potential."
+preloadImg: ""
+permalink: "gallery/"
+eleventyNavigation:
+  key: Gallery
+  order: 1
+---
+
+{% extends "layouts/base.html" %} {% block head %}
+
+<script src="/assets/js/gallery.js" defer></script>
+
+{% endblock %} {% block body %}
+
+<!-- ============================================ -->
+<!--                    Landing                   -->
+<!-- ============================================ -->
+
+<section id="gallery-intro">
+  <div class="container">
+    <div class="flex-group-col">
+      <div class="flex-text fade-in">
+        <p class="topper">Gallery</p>
+        <h1 class="title">See the work we’ve done</h1>
+      </div>
+      <p class="fade-in">
+        Explore our portfolio of completed racking projects, showcasing the
+        precision, innovation, and quality that define our work.
+      </p>
+      <p class="fade-in">
+        From large-scale warehouse installations to custom storage solutions,
+        see how we’ve helped businesses across North America maximize their
+        storage potential.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="container">
+    <div class="flex-group-col">
+      <h2 class="title">Our Gallery</h2>
+      <div class="gallery-grid" id="imageGrid">
+        {% for image in gallery %}
+        <img src="{{ image }}" class="gallery-item" loading="lazy" />
+        {% endfor %}
+      </div>
+      <button id="loadMoreBtn" class="btn-red">See More</button>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox Modal (hidden by default) -->
+<div id="lightboxModal" class="lightbox-modal" hidden>
+  <span id="lightboxClose" class="lightbox-close">&times;</span>
+  <img id="lightboxImage" />
+</div>
+
+{% include "components/cta.html" %} {% endblock %}

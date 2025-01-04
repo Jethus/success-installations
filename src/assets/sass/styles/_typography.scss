@@ -1,0 +1,209 @@
+/*$ $$$$$$$$$$$$$ $>
+<$-       SCSS Typeography     $>
+<$- $$$$$$$$$$$$$ -*/
+@use "vars" as *;
+@use "sass:math";
+
+/* merriweather-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Merriweather";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/merriweather-v30-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* merriweather-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Merriweather";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/assets/fonts/merriweather-v30-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* merriweather-900 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Merriweather";
+  font-style: normal;
+  font-weight: 900;
+  src: url("/assets/fonts/merriweather-v30-latin-900.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* merriweather-sans-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Merriweather Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/assets/fonts/merriweather-sans-v26-latin-regular.woff2")
+    format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* merriweather-sans-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Merriweather Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/assets/fonts/merriweather-sans-v26-latin-700.woff2")
+    format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+// .SCSS Fluid Text Scaling
+
+$font-size-min: 16; // px at $viewport-min
+$font-size-max: 22; // px at $viewport-max
+$font-ratio-min: 1.25; // ratio at smallest
+$font-ratio-max: 1.3333; // ratio at largest
+$viewport-min: 320; // px for min size
+$viewport-max: 1500; // px for max size
+
+@mixin fluid-type($fl: 0) {
+  // Calculate min/max in px for this "fluid level"
+  $fluid-min: $font-size-min * math.pow($font-ratio-min, $fl);
+  $fluid-max: $font-size-max * math.pow($font-ratio-max, $fl);
+
+  // Growth rate (px per 1px of viewport width)
+  $fluid-preferred: math.div(
+    ($fluid-max - $fluid-min),
+    ($viewport-max - $viewport-min)
+  );
+
+  // Convert px -> rem with `math.div(..., 16)` and wrap the tricky part in calc()
+  font-size: clamp(
+    #{math.div($fluid-min, 16)}rem,
+    calc(
+      #{math.div($fluid-min, 16)}rem +
+        (#{$fluid-preferred} * (100vw - #{$viewport-min}px)) / 16
+    ),
+    #{math.div($fluid-max, 16)}rem
+  );
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li,
+textarea,
+input,
+select,
+button,
+th,
+td {
+  @include fluid-type(0);
+}
+
+h1,
+.h1 {
+  @include fluid-type(5);
+}
+
+h2,
+.h2 {
+  @include fluid-type(4);
+}
+
+h3,
+.h3 {
+  @include fluid-type(3);
+}
+
+h4,
+.h4 {
+  @include fluid-type(2);
+}
+
+h5,
+.h5 {
+  @include fluid-type(1);
+}
+
+$line-height: calc(4px + 2ex + 4px);
+
+// Headings font
+$header-font: "Merriweather", "Arial", sans-serif;
+// Body font
+$body-font: "Merriweather Sans", "Arial", sans-serif;
+
+// Font adjustments
+$line-height-small: 1.2;
+$line-height-normal: 1.6;
+$letter-spacing-wide: 0.05em;
+
+// Font weights
+$regular-weight: 400;
+$bold-weight: 700;
+$black-weight: 900;
+
+@mixin header-style {
+  font-family: $header-font;
+  line-height: $line-height;
+  font-weight: $black-weight;
+}
+
+@mixin body-style {
+  font-family: $body-font;
+  line-height: $line-height-normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  @include header-style;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:not([class*="btn"]):not(.skip):not(.logo) {
+  position: relative;
+  color: $brand-secondary;
+  transition: transform 0.12s ease-in-out, color 0.12s ease-in-out;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: currentColor;
+    transform: scaleX(0); /* hidden by default */
+    transform-origin: left; /* animate left to right */
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
+  &:hover {
+    color: $brand-secondary !important;
+    svg {
+      fill: $brand-secondary !important;
+    }
+  }
+  &:hover::after {
+    transform: scaleX(1);
+  }
+}
+
+.topper {
+  @include fluid-type(-1);
+  align-self: flex-start;
+  font-weight: $bold-weight;
+  line-height: $line-height-small;
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing-wide;
+  color: $acc-yellow;
+  display: block;
+}
+
+input,
+textarea {
+  font-family: $body-font;
+}

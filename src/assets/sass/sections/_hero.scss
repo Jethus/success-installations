@@ -1,0 +1,55 @@
+@use "../styles/index" as *;
+
+#hero {
+  padding: 6rem 2rem;
+  .hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 24rem;
+    background: url("/assets/images/hero.jpg") no-repeat center center;
+    background-size: cover;
+    @include container-query(large) {
+      bottom: 4rem;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.6); /* dark overlay */
+    }
+  }
+  .container {
+    .flex-group-row {
+      flex-direction: column;
+      gap: 2rem;
+      .title {
+        flex: 1.5;
+        @include container-query(medium) {
+          @include fluid-type(7);
+        }
+      }
+      .flex-group-col {
+        gap: 1rem;
+        flex: 1.1;
+        .flex-text {
+          h2 {
+            @include fluid-type(2.5);
+          }
+        }
+        .flex-group-row {
+          width: 95%;
+          justify-content: center;
+        }
+      }
+
+      @include container-query(medium) {
+        flex-direction: row;
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+@use "../styles/index" as *;
+
+picture {
+  flex: 1;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}

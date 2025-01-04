@@ -1,0 +1,22 @@
+@use "../styles/index" as *;
+
+#purchase-racking {
+  background-color: $acc-darkgray;
+  padding: 0;
+  .flex-group-row {
+    gap: 3rem;
+    .hero img {
+      border-right: $nas-red 0.5rem solid;
+      max-height: 48rem;
+    }
+    .flex-group-col {
+      align-items: flex-start;
+      img {
+        width: 300px;
+      }
+      & > *:not(img) {
+        padding-right: 16rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+/*-- -------------------------- -->
+<---        Contact us          -->
+<--- -------------------------- -*/
+@use "../styles/index" as *;
+
+// Contact styles
+
+#contact {
+  background-color: $acc-darkgray;
+  .flex-group-col {
+    align-items: flex-start;
+  }
+  #long-contact-form {
+    background-color: $brand-primary;
+    padding: 2rem 3rem;
+    border-radius: 1rem;
+    max-width: 40%;
+    @include drop-shadow;
+
+    .flex-input {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      gap: 0.5rem;
+      .flex-group-row {
+        justify-content: flex-start;
+        align-items: center;
+        gap: 0.5rem;
+        svg {
+          width: 24px;
+          height: 24px;
+        }
+      }
+      label {
+        @include fluid-type(1);
+        font-family: $header-font;
+        span {
+          color: $acc-yellow;
+        }
+      }
+      input {
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+        border-radius: 0.5rem;
+        padding: 0.75rem 1rem;
+        border: none;
+      }
+    }
+  }
+}

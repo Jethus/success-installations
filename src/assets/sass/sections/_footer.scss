@@ -1,0 +1,51 @@
+@use "../styles/index" as *;
+
+#footer {
+  background-color: $dark;
+  color: $light;
+
+  .container {
+    flex-direction: column;
+
+    .flex-group-row {
+      width: 100%;
+      justify-content: center;
+      padding: 2rem 1.5rem;
+      gap: 4rem;
+
+      .logo {
+        width: 20%;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+
+    .lists {
+      display: flex;
+      flex-direction: row;
+      gap: 4rem;
+      ul {
+        a {
+          color: $light;
+          @include fluid-type(1.25);
+        }
+      }
+    }
+    .credit {
+      width: 100vw;
+      border-top: 1px solid $light;
+      font-size: 0.875rem;
+      @include flex-group-row;
+      justify-content: center;
+      gap: 0.25rem;
+      padding: 0.25rem;
+      text-align: center;
+
+      @include container-query(small) {
+      }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+@use "../styles/index" as *;
+
+#authority {
+  background: url("/assets/images/authority01.jpg") no-repeat center center;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+  .container {
+    flex-direction: column;
+  }
+
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.66);
+    padding: 2rem;
+    margin: 2rem 40% 0 0;
+    border-radius: 0.5rem;
+    .emphasis {
+      @include fluid-type(7);
+      color: $brand-secondary;
+      text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+      line-height: normal;
+    }
+  }
+
+  .flex-group-row {
+    align-items: stretch;
+    margin: 2rem 0 0;
+    .card {
+      @include flex-group-col;
+      background-color: $acc-cream;
+      color: $acc-blue;
+      padding: 2rem 1.5rem;
+      border-radius: 1rem;
+      justify-content: flex-start;
+      gap: 1rem;
+      text-align: center;
+      transform: translateY(100%);
+      svg {
+        fill: $acc-blue;
+        width: 128px;
+        height: 128px;
+      }
+      ul {
+        padding: 0 1rem;
+        text-align: left;
+        color: $dark;
+      }
+    }
+  }
+}

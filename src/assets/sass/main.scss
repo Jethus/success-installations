@@ -1,6 +1,20 @@
-@forward "vars.scss";
-@forward "base.scss";
-@use "landing.scss";
-@use "contact.scss";
-@use "about.scss";
-@use "services.scss";
+@use "base/accessibility";
+@use "base/layout";
+@use "base/media";
+@use "base/reset";
+@use "base/utilities";
+
+@use "sections/authority";
+@use "sections/brands";
+@use "sections/contact.scss";
+@use "sections/cta";
+@use "sections/footer";
+@use "sections/gallery";
+@use "sections/header";
+@use "sections/hero";
+@use "sections/installation-types";
+@use "sections/nas";
+@use "sections/purchase-racking";
+@use "sections/racking-installation";
+@use "sections/racking-types";
+@use "sections/services";
