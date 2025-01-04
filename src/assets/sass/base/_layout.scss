@@ -1,7 +1,9 @@
 @use "../styles/index" as *;
 
 html {
-  scroll-behavior: smooth;
+  @include container-query(medium) {
+    scroll-behavior: smooth;
+  }
 }
 
 body,
@@ -16,13 +18,6 @@ html {
 
 main {
   container-type: inline-size;
-}
-
-body:has(#menu-toggle:checked) {
-  overflow: hidden;
-  height: 100%;
-  width: 100%;
-  position: fixed;
 }
 
 /* Remove tap highlight color */
@@ -47,4 +42,5 @@ section {
   width: 100%;
   margin: auto;
   @include flex-group-row;
+  z-index: 2;
 }

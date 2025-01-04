@@ -12,10 +12,11 @@
   .overlay {
     background-color: rgba(0, 0, 0, 0.66);
     padding: 2rem;
-    margin: 2rem 40% 0 0;
+    margin: 0;
+    margin-top: 4rem;
     border-radius: 0.5rem;
     .emphasis {
-      @include fluid-type(7);
+      @include fluid-type(5);
       color: $brand-secondary;
       text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
       line-height: normal;
@@ -24,6 +25,7 @@
 
   .flex-group-row {
     align-items: stretch;
+    flex-direction: column;
     margin: 2rem 0 0;
     .card {
       @include flex-group-col;
@@ -34,7 +36,7 @@
       justify-content: flex-start;
       gap: 1rem;
       text-align: center;
-      transform: translateY(100%);
+      transform: translateY(0);
       svg {
         fill: $acc-blue;
         width: 128px;
@@ -44,6 +46,22 @@
         padding: 0 1rem;
         text-align: left;
         color: $dark;
+      }
+    }
+  }
+  @include container-query(medium) {
+    .container {
+      .overlay {
+        margin: 2rem 40% 0 0;
+        .emphasis {
+          @include fluid-type(7);
+        }
+      }
+      .flex-group-row {
+        flex-direction: row;
+        .card {
+          transform: translateY(50%);
+        }
       }
     }
   }

@@ -7,10 +7,10 @@
     top: 0;
     left: 0;
     right: 0;
-    bottom: 24rem;
+    bottom: -4rem;
     background: url("/assets/images/hero.jpg") no-repeat center center;
     background-size: cover;
-    @include container-query(large) {
+    @include container-query(medium) {
       bottom: 4rem;
     }
     &::before {
@@ -44,6 +44,10 @@
         .flex-group-row {
           width: 95%;
           justify-content: center;
+          .btn-red {
+            text-align: center;
+            width: 100%;
+          }
         }
       }
 

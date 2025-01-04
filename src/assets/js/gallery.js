@@ -1,6 +1,6 @@
 // Gallery
 const allImages = Array.from(document.querySelectorAll(".gallery-item"));
-const batchSize = 8;
+const batchSize = 4;
 let currentIndex = 0;
 
 function showNextBatch() {

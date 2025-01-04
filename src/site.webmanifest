@@ -1,0 +1,21 @@
+{
+  "name": "Success Installations",
+  "short_name": "Success Racking",
+  "description": "Providing top-quality racking solutions and installations across North America.",
+  "icons": [
+    {
+      "src": "/assets/favicons/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/favicons/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "display": "browser",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

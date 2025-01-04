@@ -4,7 +4,7 @@
   background-color: $acc-brown;
   .card-list {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 3rem;
     .card {
       width: 100%;
@@ -14,7 +14,6 @@
       gap: 1rem;
       flex-direction: column;
       padding: 2.5rem;
-      flex: 40%;
       @include transition-fast(transform);
       &:hover {
         transform: scale(1.05);
@@ -46,21 +45,28 @@
         align-items: flex-start;
         justify-content: flex-start;
       }
-      &.expanded {
-        &.r1 {
-          grid-row: 1;
+    }
+  }
+  @include container-query(medium) {
+    .card-list {
+      grid-template-columns: repeat(2, 1fr);
+      .card {
+        &.expanded {
+          grid-column: 1 / -1;
+          transform: scale(1.05);
+          &.r1 {
+            grid-row: 1;
+          }
+          &.r2 {
+            grid-row: 2;
+          }
+          &.r3 {
+            grid-row: 3;
+          }
+          &.r4 {
+            grid-row: 4;
+          }
         }
-        &.r2 {
-          grid-row: 2;
-        }
-        &.r3 {
-          grid-row: 3;
-        }
-        &.r4 {
-          grid-row: 4;
-        }
-        grid-column: 1 / -1;
-        transform: scale(1.05);
       }
     }
   }
