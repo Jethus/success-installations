@@ -4,7 +4,7 @@
   background-color: $acc-brown;
   .card-list {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 3rem;
     .card {
       background-color: $acc-darkgray;
@@ -34,6 +34,11 @@
         fill: $light;
         transform: rotate(-90deg);
       }
+    }
+  }
+  @include container-query(medium) {
+    .card-list {
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 }

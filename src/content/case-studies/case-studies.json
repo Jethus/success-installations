@@ -1,5 +1,0 @@
-{
-  "layout": "layouts/case-study.html",
-  "tags": "case-study",
-  "permalink": "case-studies/{{title}}/index.html"
-}

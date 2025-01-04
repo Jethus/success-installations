@@ -4,13 +4,17 @@
   background-color: $acc-darkgray;
   padding: 0;
   .flex-group-row {
-    gap: 3rem;
+    flex-direction: column;
+    picture {
+      width: 100%;
+    }
     .hero img {
       border-right: $acc-yellow 0.5rem solid;
-      max-height: 60rem;
+      max-height: 20rem;
       object-position: top;
     }
     .flex-group-col {
+      padding: 1.5rem 0.75rem;
       align-items: flex-start;
       ul {
         list-style: none;
@@ -22,7 +26,31 @@
         width: 300px;
       }
       & > *:not(img) {
-        padding-right: 16rem;
+        padding-right: 0;
+      }
+    }
+  }
+  @include container-query(medium) {
+    .flex-group-row {
+      flex-direction: row;
+      picture {
+        width: auto;
+      }
+      .hero img {
+        border-right: $acc-yellow 0.5rem solid;
+        max-height: 60rem;
+        height: 56rem;
+        object-position: top;
+      }
+    }
+  }
+  @include container-query(large) {
+    .flex-group-col {
+      img {
+        width: 300px;
+      }
+      & > *:not(img) {
+        padding-right: 8rem;
       }
     }
   }

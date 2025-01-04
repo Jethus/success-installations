@@ -4,10 +4,9 @@
   background-color: $acc-midgray;
   .flex-group-row {
     justify-content: center;
+    flex-direction: column;
     .flex-group-col {
       align-items: flex-start;
-      flex: 1 0 auto;
-      max-width: 50%;
 
       .flex-text {
         align-items: flex-start;
@@ -19,7 +18,7 @@
     background-color: $brand-primary;
     padding: 2rem 3rem;
     border-radius: 1rem;
-    max-width: 40%;
+    width: 90%;
     @include drop-shadow;
     .flex-input {
       display: flex;
@@ -29,6 +28,7 @@
       .flex-group-row {
         justify-content: flex-start;
         align-items: center;
+        flex-direction: row;
         gap: 0.5rem;
         svg {
           width: 24px;
@@ -48,6 +48,19 @@
         padding: 0.75rem 1rem;
         border: none;
       }
+    }
+  }
+  @include container-query(medium) {
+    .flex-group-row {
+      flex-direction: row;
+      .flex-group-col {
+        flex: 1 0 auto;
+        max-width: 50%;
+      }
+    }
+    #contact-form {
+      width: auto;
+      max-width: 40%;
     }
   }
 }

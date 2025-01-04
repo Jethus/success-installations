@@ -38,7 +38,6 @@
     <link rel="manifest" href="/site.webmanifest" />
 
     <!-- Preloads -->
-    <link rel="preload" as="image" href="/assets/svgs/logo-rgb.svg" />
     <!-- Preload an image - tag not rendered if preloadImg is blank to stop console errors -->
     {% if preloadImg != '' %}
     <link rel="preload" as="image" href="{{ preloadImg }}" />
@@ -59,22 +58,7 @@
         -->
 
     <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-HHR2PQB4C0"
-      defer
-    ></script>
-    <script defer>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
 
-      gtag("config", "G-HHR2PQB4C0", {
-        cookie_flags: "max-age=7200;SameSite=None;Secure;",
-      });
-    </script>
     {% block head %}{% endblock %}
 
     <title>

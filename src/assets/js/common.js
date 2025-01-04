@@ -40,3 +40,28 @@ document.getElementById("phone").addEventListener("input", function (e) {
 
   e.target.value = formatted; // Update the input field
 });
+
+const menuToggle = document.getElementById("menu-toggle");
+
+let savedScrollY = 0;
+
+// Whenever the checkbox changes state
+menuToggle.addEventListener("change", () => {
+  if (menuToggle.checked) {
+    // Menu is opening
+    savedScrollY = window.scrollY; // Store current scroll pos
+    // Lock the body using position fixed
+    document.body.style.position = "fixed";
+    document.body.style.width = "100%";
+    // Set 'top' so the body stays exactly where it was
+    document.body.style.top = `-${savedScrollY}px`;
+  } else {
+    // Menu is closing
+    // Restore normal body scrolling
+    document.body.style.position = "";
+    document.body.style.top = "";
+    document.body.style.width = "";
+    // Re-enable scrolling at the previous scrollY
+    window.scrollTo(0, savedScrollY);
+  }
+});
