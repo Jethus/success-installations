@@ -2,17 +2,17 @@
   "name": "Success Installations",
   "email": "hello@successinstallations.com",
   "personalEmail": "peter@successinstallations.com",
-  "phoneForTel": "905-781-2464",
-  "phoneFormatted": "(905) 781-2464",
+  "phoneForTel": "613-790-9112",
+  "phoneFormatted": "(613) 790-9112",
   "address": {
-    "lineOne": "First Address Line",
-    "lineTwo": "Second Address Line",
-    "city": "Whitby",
+    "lineOne": "75 Henry Smith Ave.",
+    "lineTwo": "",
+    "city": "Bowmanville",
     "province": "ON",
-    "postalCode": "L1N",
+    "postalCode": "L1C 0T1",
     "mapLink": ""
   },
   "domain": "successinstallations.ca",
-  "tag": "Expert Web Design & Development",
-  "description": "Discover Pixel Boost, a Whitby-based web development and design agency specializing in creating high-performance websites for small businesses. Elevate your online presence with our affordable, effective solutions tailored to your unique needs."
+  "tag": "North America's Leading Racking Solutions",
+  "description": "Explore Success Installations, your trusted partner for professional racking installation and storage solutions across North America. Specializing in large-scale projects, we deliver expert service, durable racking systems, and reliable project management tailored to your business needs."
 }
