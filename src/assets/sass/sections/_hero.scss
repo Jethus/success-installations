@@ -1,18 +1,15 @@
 @use "../styles/index" as *;
 
 #hero {
-  padding: 6rem 2rem;
+  padding: 8rem 2rem;
+  @include container-query(large) {
+    padding: 10rem 2rem;
+  }
   .hero-image {
     position: absolute;
-    top: 0;
+    top: -2rem;
     left: 0;
     right: 0;
-    bottom: -4rem;
-    background: url("/assets/images/hero.jpg") no-repeat center center;
-    background-size: cover;
-    @include container-query(medium) {
-      bottom: 4rem;
-    }
     &::before {
       content: "";
       position: absolute;
@@ -35,7 +32,7 @@
       }
       .flex-group-col {
         gap: 1rem;
-        flex: 1.1;
+        flex: 1.2;
         .flex-text {
           h2 {
             @include fluid-type(2.5);
