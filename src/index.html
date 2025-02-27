@@ -34,7 +34,29 @@ order: 1
 <!-- ============================================ -->
 
 <section id="hero">
-  <div class="hero-image"></div>
+  <picture class="hero-image">
+    <source
+      media="(max-width: 768px)"
+      srcset="/assets/images/hero-mobile-alt.webp"
+    />
+    <source
+      media="(max-width: 1024px)"
+      srcset="/assets/images/hero-tablet-alt.webp"
+    />
+    <source
+      media="(min-width: 1025px)"
+      srcset="/assets/images/hero-desktop-alt.webp"
+    />
+    <img
+      aria-hidden="true"
+      decoding="async"
+      src="/assets/images/hero-desktop.webp"
+      alt=""
+      width="2000"
+      height="1200"
+      loading="eager"
+    />
+  </picture>
   <div class="container">
     <div class="flex-group-row">
       <h1 class="title fade-in">
@@ -45,7 +67,7 @@ order: 1
           <p class="topper">#1 in North America</p>
           <h2 class="title">
             From sourcing to installation, trust North America’s #1 for secure,
-            custom racking solutions.
+            custom warehouse storage solutions.
           </h2>
         </div>
         <div class="flex-group-row">
@@ -166,8 +188,8 @@ order: 1
   <div class="container">
     <div class="overlay fade-in">
       <h2 class="title">
-        <span class="emphasis">Over <span>1,000,000</span></span>
-        square feet of racking installed across North America
+        <span class="emphasis">Over <span>10 mllion</span></span> square feet of
+        racking installed across North America
       </h2>
     </div>
     <div class="flex-group-row">
@@ -404,7 +426,7 @@ order: 1
       <img
         aria-hidden="true"
         decoding="async"
-        src="/assets/images/services01.png"
+        src="/assets/images/services01.webp"
         alt=""
         width="650px"
         height="450px"
@@ -418,7 +440,7 @@ order: 1
       <img
         aria-hidden="true"
         decoding="async"
-        src="/assets/images/services02.png"
+        src="/assets/images/services02.webp"
         alt=""
         width="650px"
         height="450px"
@@ -432,7 +454,7 @@ order: 1
       <img
         aria-hidden="true"
         decoding="async"
-        src="/assets/images/services03.png"
+        src="/assets/images/services03.webp"
         alt=""
         width="650px"
         height="450px"
@@ -446,7 +468,7 @@ order: 1
       <img
         aria-hidden="true"
         decoding="async"
-        src="/assets/images/services04.png"
+        src="/assets/images/services04.webp"
         alt=""
         width="650px"
         height="450px"
@@ -460,7 +482,7 @@ order: 1
       <img
         aria-hidden="true"
         decoding="async"
-        src="/assets/images/services05.png"
+        src="/assets/images/services05.webp"
         alt=""
         width="650px"
         height="450px"
@@ -474,7 +496,7 @@ order: 1
       <img
         aria-hidden="true"
         decoding="async"
-        src="/assets/images/services06.png"
+        src="/assets/images/services06.webp"
         alt=""
         width="650px"
         height="450px"

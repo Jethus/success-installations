@@ -30,9 +30,18 @@
     padding: 4rem;
     .scrolling-inner {
       display: flex;
-      gap: 3rem;
-      animation: marquee 60s linear infinite;
+      gap: 2rem;
+      animation: marquee 10s linear infinite;
+      @include container-query(medium) {
+        animation: marquee 20s linear infinite;
+      }
       align-items: center;
+      img {
+        height: 60px;
+        @include container-query(medium) {
+          height: 80px;
+        }
+      }
     }
   }
 }
