@@ -62,6 +62,10 @@
   }
 }
 
+@mixin highlight() {
+  color: $acc-yellow;
+}
+
 @mixin focus-style($colour) {
   outline: 2px solid $colour;
 }

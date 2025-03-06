@@ -5,6 +5,10 @@
   will-change: transform, opacity;
 }
 
+.highlight {
+  @include highlight;
+}
+
 .slide-out {
   transform: translateY(-200vh);
   will-change: transform;
