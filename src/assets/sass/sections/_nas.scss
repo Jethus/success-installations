@@ -18,22 +18,28 @@
         align-items: flex-start;
         gap: 1rem;
         padding: 1.5rem 2rem;
-        background-color: $acc-cream;
+        background-color: $acc-darkgray;
         border-left: $nas-red 0.5rem solid;
         border-radius: 0.5rem;
         justify-content: space-between;
         list-style: none;
+        @include transition-fast(scale);
+        &:hover {
+          scale: 1.05;
+        }
         h2 {
           @include fluid-type(2);
         }
 
         .flex-text {
+          color: $light;
           align-items: flex-start;
-          color: $dark;
         }
         svg {
           width: 64px;
           height: 64px;
+          fill: #fff;
+          margin-left: 0.25rem;
         }
       }
     }

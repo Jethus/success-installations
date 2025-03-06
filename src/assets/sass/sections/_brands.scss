@@ -32,10 +32,10 @@
       display: flex;
       gap: 2rem;
       animation: marquee 10s linear infinite;
+      align-items: center;
       @include container-query(medium) {
         animation: marquee 20s linear infinite;
       }
-      align-items: center;
       img {
         height: 60px;
         @include container-query(medium) {

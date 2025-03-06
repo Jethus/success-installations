@@ -44,7 +44,12 @@ eleventyNavigation:
       <h2 class="title fade-in">Our Gallery</h2>
       <div class="gallery-grid fade-in" id="imageGrid">
         {% for image in gallery %}
-        <img src="{{ image }}" class="gallery-item" loading="lazy" />
+        <img
+          src="{{ image.small }}"
+          data-large="{{ image.large }}"
+          class="gallery-item"
+          loading="lazy"
+        />
         {% endfor %}
       </div>
       <button id="loadMoreBtn" class="btn-red">Load More</button>

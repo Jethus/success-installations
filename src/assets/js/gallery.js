@@ -41,7 +41,8 @@ function openLightbox(index) {
   if (index >= allImages.length) index = allImages.length - 1;
 
   currentLightboxIndex = index;
-  lightboxImage.src = allImages[currentLightboxIndex].src;
+  const largeSrc = allImages[currentLightboxIndex].dataset.large;
+  lightboxImage.src = largeSrc ? largeSrc : allImages[currentLightboxIndex].src;
   lightboxModal.style.display = "flex";
 }
 
