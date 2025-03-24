@@ -5,8 +5,7 @@
   background-color: $dark;
   z-index: 2;
 
-  &::before,
-  &::after {
+  &::before {
     content: "";
     position: absolute;
     left: -2rem;
@@ -20,9 +19,6 @@
   &::before {
     top: -4rem;
   }
-  &::after {
-    bottom: -4rem;
-  }
 
   .scrolling-brands {
     display: flex;
@@ -31,7 +27,7 @@
     .scrolling-inner {
       display: flex;
       gap: 2rem;
-      animation: marquee 10s linear infinite;
+      animation: marquee 15s linear infinite;
       align-items: center;
       @include container-query(medium) {
         animation: marquee 25s linear infinite;
