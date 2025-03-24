@@ -4,7 +4,7 @@
   position: relative;
   background-color: $dark;
   z-index: 2;
-  padding: 1rem 0;
+  padding-top: 1rem;
   @include container-query(medium) {
     padding: 0;
   }
@@ -38,12 +38,12 @@
   .scrolling-brands {
     display: flex;
     overflow: hidden;
-    padding: 3rem 0;
     .scrolling-inner {
       display: flex;
       gap: 2rem;
       animation: marquee 20s linear infinite;
       align-items: center;
+      padding: 2rem 0;
       @include container-query(medium) {
         animation: marquee 25s linear infinite;
       }
