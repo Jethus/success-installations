@@ -13,7 +13,7 @@
       overflow: hidden;
       img {
         transition: filter 0.3s ease;
-        border-radius: 0;
+        border-radius: 0.25rem;
       }
       &:hover,
       &:focus-within {
@@ -38,7 +38,7 @@
     }
   }
   @include container-query(medium) {
-    padding: 15rem 0 0.75rem;
+    padding: 2rem 0 0.75rem;
     .grid-images {
       grid-template-columns: repeat(3, 1fr);
     }

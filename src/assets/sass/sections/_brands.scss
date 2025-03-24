@@ -34,7 +34,7 @@
       animation: marquee 10s linear infinite;
       align-items: center;
       @include container-query(medium) {
-        animation: marquee 20s linear infinite;
+        animation: marquee 25s linear infinite;
       }
       img {
         height: 60px;
