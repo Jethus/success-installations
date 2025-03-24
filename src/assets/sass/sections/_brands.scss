@@ -4,9 +4,14 @@
   position: relative;
   background-color: $dark;
   z-index: 2;
+  padding: 1rem 0;
+  @include container-query(medium) {
+    padding: 0;
+  }
 
   &::before,
   &::after {
+    display: none;
     content: "";
     position: absolute;
     left: -2rem;
@@ -16,6 +21,9 @@
     z-index: 2;
     pointer-events: none;
     background-color: $dark;
+    @include container-query(medium) {
+      display: block;
+    }
   }
   &::before {
     top: -4rem;
@@ -23,18 +31,21 @@
   &::after {
     bottom: -4rem;
   }
+  .container {
+    padding: 1.5rem 0.75rem;
+  }
 
   .scrolling-brands {
     display: flex;
     overflow: hidden;
-    padding: 4rem;
+    padding: 3rem 0;
     .scrolling-inner {
       display: flex;
       gap: 2rem;
-      animation: marquee 10s linear infinite;
+      animation: marquee 20s linear infinite;
       align-items: center;
       @include container-query(medium) {
-        animation: marquee 20s linear infinite;
+        animation: marquee 25s linear infinite;
       }
       img {
         height: 60px;

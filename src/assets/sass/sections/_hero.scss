@@ -7,7 +7,7 @@
   }
   .hero-image {
     position: absolute;
-    top: -2rem;
+    top: 0;
     left: 0;
     right: 0;
     &::before {
@@ -17,7 +17,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba(0, 0, 0, 0.6); /* dark overlay */
+      background: rgba(0, 0, 0, 0.45); /* dark overlay */
     }
   }
   .container {
@@ -41,6 +41,9 @@
         .flex-group-row {
           width: 95%;
           justify-content: center;
+          @include container-query(small) {
+            flex-direction: row;
+          }
           .btn-red {
             text-align: center;
             width: 100%;
