@@ -4,9 +4,13 @@
   position: relative;
   background-color: $dark;
   z-index: 2;
-  padding-top: 1rem;
+  padding: 1rem 0 0;
   @include container-query(medium) {
     padding: 0;
+  }
+
+  .container {
+    padding: 1.5rem 0.75rem;
   }
 
   &::before,
@@ -31,9 +35,6 @@
   &::after {
     bottom: -4rem;
   }
-  .container {
-    padding: 1.5rem 0.75rem;
-  }
 
   .scrolling-brands {
     display: flex;
@@ -43,7 +44,7 @@
       gap: 2rem;
       animation: marquee 20s linear infinite;
       align-items: center;
-      padding: 2rem 0;
+      padding: 3rem 0;
       @include container-query(medium) {
         animation: marquee 25s linear infinite;
       }
