@@ -5,7 +5,8 @@
   background-color: $dark;
   z-index: 2;
 
-  &::before {
+  &::before,
+  &::after {
     content: "";
     position: absolute;
     left: -2rem;
@@ -18,6 +19,9 @@
   }
   &::before {
     top: -4rem;
+  }
+  &::after {
+    bottom: -4rem;
   }
 
   .scrolling-brands {
