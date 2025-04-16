@@ -14,13 +14,27 @@
 @mixin container-query($size) {
   $query: map.get($breakpoints, $size);
 
-  @if $query {
-    @container (min-width: #{$query}) {
-      @content;
+  @supports (container-type: inline-size) {
+    @if $query {
+      @container (min-width: #{$query}) {
+        @content;
+      }
+    } @else {
+      @container (min-width: #{$size}) {
+        @content;
+      }
     }
-  } @else {
-    @container (min-width: #{$size}) {
-      @content;
+  }
+
+  @supports not (container-type: inline-size) {
+    @if $query {
+      @media only screen and (min-width: #{$query}) {
+        @content;
+      }
+    } @else {
+      @media only screen and (min-width: #{$size}) {
+        @content;
+      }
     }
   }
 }
