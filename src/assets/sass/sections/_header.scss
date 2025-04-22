@@ -22,14 +22,13 @@
     left: 0;
     height: 200%;
     backdrop-filter: blur(1rem);
+    -webkit-backdrop-filter: blur(1rem);
     mask-image: linear-gradient(to bottom, black 0% 50%, transparent 50% 100%);
     pointer-events: none;
 
     @supports (
       mask-image: linear-gradient(to bottom, black 0% 50%, transparent 50% 100%)
     ) {
-      backdrop-filter: blur(1rem);
-      -webkit-backdrop-filter: blur(1rem);
       mask-image: linear-gradient(
         to bottom,
         black 0% 50%,
@@ -209,9 +208,6 @@
         }
         svg {
           fill: $light;
-        }
-        .Racking {
-          display: none;
         }
 
         .tel {
