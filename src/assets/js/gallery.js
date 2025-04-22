@@ -32,6 +32,7 @@ document.getElementById("loadMoreBtn").addEventListener("click", showNextBatch);
 const lightboxModal = document.getElementById("lightboxModal");
 const lightboxImage = document.getElementById("lightboxImage");
 const lightboxClose = document.getElementById("lightboxClose");
+let scrollY = 0;
 
 let currentLightboxIndex = -1; // which image is currently shown
 
@@ -45,14 +46,15 @@ function openLightbox(index) {
   const largeSrc = allImages[currentLightboxIndex].dataset.large;
   lightboxImage.src = largeSrc ? largeSrc : allImages[currentLightboxIndex].src;
   lightboxModal.style.display = "flex";
-  void lightboxModal.offsetWidth; // triggers reflow on iOS
-  lightboxModal.scrollTop = 0;
+  scrollY = window.scrollY;
+  window.scrollTo(0, 0);
 }
 
 function closeLightbox() {
   lightboxModal.style.display = "none";
   lightboxImage.src = "";
   currentLightboxIndex = -1;
+  window.scrollTo(0, scrollY);
 }
 
 lightboxClose.addEventListener("click", closeLightbox);
