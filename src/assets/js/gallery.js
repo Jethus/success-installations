@@ -37,6 +37,7 @@ let currentLightboxIndex = -1; // which image is currently shown
 
 function openLightbox(index) {
   // Clamp so we don't go out of bounds
+  document.body.style.top = `-${window.scrollY}px`;
   if (index < 0) index = 0;
   if (index >= allImages.length) index = allImages.length - 1;
 
@@ -44,7 +45,7 @@ function openLightbox(index) {
   const largeSrc = allImages[currentLightboxIndex].dataset.large;
   lightboxImage.src = largeSrc ? largeSrc : allImages[currentLightboxIndex].src;
   lightboxModal.style.display = "flex";
-  document.body.style.top = `-${window.scrollY}px`;
+  document.body.style.position = "fixed";
 }
 
 function closeLightbox() {
@@ -54,7 +55,7 @@ function closeLightbox() {
   const scrollY = document.body.style.top;
   document.body.style.position = "";
   document.body.style.top = "";
-  window.scrollTo(0, parseInt(scrollY || "0") * -1);
+  window.scrollTo(0, parseInt(scrollY) * -1);
 }
 
 lightboxClose.addEventListener("click", closeLightbox);
