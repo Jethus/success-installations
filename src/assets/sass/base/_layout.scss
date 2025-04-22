@@ -17,6 +17,12 @@ html {
   background-color: $dark;
 }
 
+body.modal-open {
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
+}
+
 main {
   container-type: inline-size;
 }
