@@ -16,11 +16,36 @@
 
   .backdrop {
     position: absolute;
-    inset: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     height: 200%;
     backdrop-filter: blur(1rem);
     mask-image: linear-gradient(to bottom, black 0% 50%, transparent 50% 100%);
     pointer-events: none;
+
+    @supports (
+      (-webkit-backdrop-filter: blur(1rem)) or (backdrop-filter: blur(1rem))
+    ) {
+      backdrop-filter: blur(1rem);
+      -webkit-backdrop-filter: blur(1rem);
+      mask-image: linear-gradient(
+        to bottom,
+        black 0% 50%,
+        transparent 50% 100%
+      );
+    }
+
+    @supports not (
+      (-webkit-backdrop-filter: blur(1rem)) or (backdrop-filter: blur(1rem))
+    ) {
+      background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0) 100%
+      );
+    }
   }
 
   .backdrop-edge {
@@ -39,7 +64,7 @@
     ) {
       backdrop-filter: blur(8px) brightness(120%);
       -webkit-backdrop-filter: blur(8px) brightness(120%);
-      background-color: rgba(0, 0, 0, 0.3);
+      background: hsl(0deg 0% 100% / 0.1);
       mask-image: linear-gradient(
         to bottom,
         black 0,
@@ -53,19 +78,10 @@
     ) {
       background: linear-gradient(
         to bottom,
-        rgba(0, 0, 0, 0.7),
-        rgba(0, 0, 0, 0)
+        rgba(255, 255, 255, 0.1),
+        transparent
       );
     }
-
-    // background: hsl(0deg 0% 100% / 0.1);
-    // backdrop-filter: blur(8px) brightness(120%);
-    // mask-image: linear-gradient(
-    //   to bottom,
-    //   black 0,
-    //   black $thickness,
-    //   transparent $thickness
-    // );
   }
 
   &.scrolledDown {
