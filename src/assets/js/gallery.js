@@ -3,8 +3,11 @@ const allImages = Array.from(document.querySelectorAll(".gallery-item"));
 const batchSize = 12;
 let currentIndex = 0;
 
+function isMobile() {
+  return window.innerWidth <= 768;
+}
+
 function showNextBatch() {
-  // Show next 6 images
   const nextImages = allImages.slice(currentIndex, currentIndex + batchSize);
   nextImages.forEach((img) => {
     img.style.display = "block";
@@ -19,9 +22,10 @@ function showNextBatch() {
 // Initially hide all images
 allImages.forEach((img, i) => {
   img.style.display = "none";
-  img.addEventListener("click", () => openLightbox(i));
+  img.addEventListener("click", () => {
+    if (!isMobile()) openLightbox(i);
+  });
 });
-console.log(allImages);
 
 // Show first batch
 showNextBatch();
@@ -43,11 +47,11 @@ function openLightbox(index) {
   currentLightboxIndex = index;
   const largeSrc = allImages[currentLightboxIndex].dataset.large;
   lightboxImage.src = largeSrc ? largeSrc : allImages[currentLightboxIndex].src;
-  lightboxModal.style.display = "flex";
+  lightboxModal.classList.remove("hidden");
 }
 
 function closeLightbox() {
-  lightboxModal.style.display = "none";
+  lightboxModal.classList.add("hidden");
   lightboxImage.src = "";
   currentLightboxIndex = -1;
 }
