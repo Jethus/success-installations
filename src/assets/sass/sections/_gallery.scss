@@ -34,17 +34,16 @@
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   background: rgba(0, 0, 0, 0.8);
-  display: flex;
+  /* Start hidden (no "hidden" attribute used; we’ll control via JS) */
+  display: none;
   align-items: center;
   justify-content: center;
   z-index: 9999;
-  /* Start hidden (no "hidden" attribute used; we’ll control via JS) */
-  display: none;
+  transform: translateZ(0); // <- Forces iOS to repaint this layer
+  will-change: transform;
   img {
     max-width: 90%;
     max-height: 90%;
