@@ -46,15 +46,12 @@ function openLightbox(index) {
   const largeSrc = allImages[currentLightboxIndex].dataset.large;
   lightboxImage.src = largeSrc ? largeSrc : allImages[currentLightboxIndex].src;
   lightboxModal.style.display = "flex";
-  scrollY = window.scrollY;
-  window.scrollTo(0, 0);
 }
 
 function closeLightbox() {
   lightboxModal.style.display = "none";
   lightboxImage.src = "";
   currentLightboxIndex = -1;
-  window.scrollTo(0, scrollY);
 }
 
 lightboxClose.addEventListener("click", closeLightbox);
