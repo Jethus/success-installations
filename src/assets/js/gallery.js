@@ -32,13 +32,11 @@ document.getElementById("loadMoreBtn").addEventListener("click", showNextBatch);
 const lightboxModal = document.getElementById("lightboxModal");
 const lightboxImage = document.getElementById("lightboxImage");
 const lightboxClose = document.getElementById("lightboxClose");
-let scrollY = 0;
 
 let currentLightboxIndex = -1; // which image is currently shown
 
 function openLightbox(index) {
   // Clamp so we don't go out of bounds
-  document.body.style.top = `-${window.scrollY}px`;
   if (index < 0) index = 0;
   if (index >= allImages.length) index = allImages.length - 1;
 
