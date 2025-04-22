@@ -246,7 +246,7 @@
       }
     }
 
-    @include container-query(medium) {
+    @include container-query(large) {
       .fries-btn {
         display: none;
       }
