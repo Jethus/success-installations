@@ -12,6 +12,7 @@
   background-color: $acc-darkgray;
   .gallery-grid {
     display: grid;
+    width: 100%;
     gap: 1rem;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     grid-auto-flow: dense;
@@ -32,28 +33,43 @@
 /* ========== LIGHTBOX ========== */
 #lightboxModal {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.8);
-  /* Start hidden (no "hidden" attribute used; we’ll control via JS) */
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  img {
-    max-width: 90%;
-    max-height: 90%;
-    display: block;
-    margin: auto;
-  }
-  .lightbox-close {
-    position: absolute;
-    top: 2rem;
-    right: 2rem;
-    font-size: 3rem;
-    color: #fff;
-    cursor: pointer;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  #lightboxContent {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    @include container-query(medium) {
+      width: 75%;
+    }
+    img {
+      max-width: 90%;
+      width: 100%;
+      height: 100%;
+      max-height: 90%;
+      display: block;
+      margin: auto;
+    }
+    #lightboxClose {
+      position: absolute;
+      width: 32px;
+      height: 32px;
+      top: -4rem;
+      right: 2rem;
+      filter: drop-shadow(2px 2px 4px rgb(0, 0, 0, 1));
+      fill: $light;
+      cursor: pointer;
+      @include container-query(medium) {
+        width: 36px;
+        height: 36px;
+        top: -5rem;
+        right: 5rem;
+      }
+    }
   }
 }
