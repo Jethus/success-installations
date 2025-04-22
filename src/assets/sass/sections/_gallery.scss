@@ -42,8 +42,6 @@
   align-items: center;
   justify-content: center;
   z-index: 9999;
-  transform: translateZ(0); // <- Forces iOS to repaint this layer
-  will-change: transform;
   img {
     max-width: 90%;
     max-height: 90%;
