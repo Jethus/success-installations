@@ -62,7 +62,7 @@ lightboxModal.addEventListener("click", (e) => {
 });
 
 document.addEventListener("keydown", (e) => {
-  if (lightboxModal.style.display !== "flex") return;
+  if (lightboxModal.classList.contains("hidden")) return;
 
   if (e.key === "ArrowLeft") {
     openLightbox(currentLightboxIndex - 1);
