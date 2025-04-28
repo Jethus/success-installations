@@ -10,7 +10,30 @@
   }
 
   .container {
-    padding: 1.5rem 0.75rem;
+    padding: 2rem;
+    & > .flex-group-row {
+      padding: 2rem 0;
+    }
+    .flex-text {
+      flex: 1;
+    }
+
+    .brands-list {
+      flex: 2.25;
+      padding: 1rem;
+      border-left: solid 1px $light;
+      gap: 0.5rem;
+      .flex-group-col {
+        gap: 4rem;
+      }
+      img {
+        max-width: 20vw;
+        // @include transition-fast(transform);
+        // &:hover {
+        //   transform: scale(1.1);
+        // }
+      }
+    }
   }
 
   &::before,
@@ -34,26 +57,5 @@
   }
   &::after {
     bottom: -4rem;
-  }
-
-  .scrolling-brands {
-    display: flex;
-    overflow: hidden;
-    .scrolling-inner {
-      display: flex;
-      gap: 2rem;
-      animation: marquee 20s linear infinite;
-      align-items: center;
-      padding: 3rem 0;
-      @include container-query(medium) {
-        animation: marquee 25s linear infinite;
-      }
-      img {
-        height: 60px;
-        @include container-query(medium) {
-          height: 80px;
-        }
-      }
-    }
   }
 }
