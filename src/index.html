@@ -10,7 +10,6 @@ order: 1
 
 {% extends "layouts/base.html" %} {% block head %}
 
-<script src="/assets/js/landing.js" defer></script>
 <!-- Script for Netlify Identity -->
 <script
   src="https://identity.netlify.com/v1/netlify-identity-widget.js"
@@ -92,79 +91,81 @@ order: 1
 
 <section id="brands">
   <div class="container">
-    <div class="flex-group-col">
+    <div class="flex-group-row">
       <div class="flex-text fade-in">
         <p class="topper">Our Partners</p>
         <h2 class="title">Trusted by Industry Leaders</h2>
       </div>
-    </div>
-  </div>
-  <div class="scrolling-brands fade-in">
-    <div class="scrolling-inner">
-      <img
-        src="/assets/svgs/loblaws.svg"
-        alt="Loblaws"
-        width="auto"
-        height="80px"
-        aria-hidden="true"
-        decoding="async"
-      />
-      <img
-        src="/assets/svgs/ford.svg"
-        alt="Ford"
-        width="auto"
-        height="80px"
-        aria-hidden="true"
-        decoding="async"
-      />
-      <img
-        src="/assets/svgs/merc.svg"
-        alt="Mercedes"
-        width="auto"
-        height="80px"
-        aria-hidden="true"
-        decoding="async"
-      />
-      <img
-        src="/assets/svgs/wayfair.svg"
-        alt="Wayfair"
-        width="auto"
-        height="80px"
-        aria-hidden="true"
-        decoding="async"
-      />
-      <img
-        src="/assets/svgs/wonderbrands.svg"
-        alt="Wonderbands"
-        width="auto"
-        height="80px"
-        aria-hidden="true"
-        decoding="async"
-      />
-      <img
-        src="/assets/svgs/fgf.svg"
-        alt="FGF"
-        width="auto"
-        height="80px"
-        aria-hidden="true"
-        decoding="async"
-      />
-      <img
-        src="/assets/svgs/gay lea.svg"
-        alt="Gay Lea"
-        width="auto"
-        height="80px"
-        aria-hidden="true"
-        decoding="async"
-      />
-      <img
-        src="/assets/svgs/iko.svg"
-        alt="IKO"
-        width="auto"
-        height="80px"
-        aria-hidden="true"
-        decoding="async"
-      />
+      <div class="brands-list flex-group-row fade-in">
+        <div class="flex-group-col fade-in">
+          <img
+            src="/assets/svgs/rgb logos/wonderbrands.svg"
+            alt="Wonderbrands"
+            width="auto"
+            height="70px"
+            aria-hidden="true"
+            decoding="async"
+          />
+          <img
+            src="/assets/svgs/rgb logos/gay lea.svg"
+            alt="Gay Lea"
+            width="auto"
+            height="70px"
+            aria-hidden="true"
+            decoding="async"
+          />
+          <img
+            src="/assets/svgs/rgb logos/iko.svg"
+            alt="IKO"
+            width="auto"
+            height="70px"
+            aria-hidden="true"
+            decoding="async"
+          />
+        </div>
+        <div class="flex-group-col fade-in">
+          <img
+            src="/assets/svgs/rgb logos/loblaws.svg"
+            alt="Loblaws"
+            width="auto"
+            height="70px"
+            aria-hidden="true"
+            decoding="async"
+          /><img
+            src="/assets/svgs/rgb logos/ford.svg"
+            alt="Ford"
+            width="auto"
+            height="70px"
+            aria-hidden="true"
+            decoding="async"
+          />
+        </div>
+        <div class="flex-group-col fade-in">
+          <img
+            src="/assets/svgs/rgb logos/mercedes-benz-alt.svg"
+            alt="Mercedes Benz"
+            width="auto"
+            height="70px"
+            aria-hidden="true"
+            decoding="async"
+          />
+          <img
+            src="/assets/svgs/rgb logos/wayfair.svg"
+            alt="Wayfair"
+            width="auto"
+            height="70px"
+            aria-hidden="true"
+            decoding="async"
+          /><img
+            src="/assets/svgs/rgb logos/fgf.svg"
+            alt="FGF"
+            width="auto"
+            height="70px"
+            aria-hidden="true"
+            decoding="async"
+          />
+        </div>
+      </div>
     </div>
   </div>
 </section>

@@ -10,12 +10,56 @@
   }
 
   .container {
-    padding: 1.5rem 0.75rem;
+    padding: 2rem 1.5rem;
+    display: block;
+    & > .flex-group-row {
+      flex-direction: column;
+      padding: 2rem 0;
+      @include container-query(medium) {
+        flex-direction: row;
+      }
+    }
+    .flex-text {
+      flex: 1;
+    }
+
+    .brands-list {
+      flex: 2.25;
+      border: none;
+      flex-direction: column;
+      gap: 3rem;
+      padding: 0;
+      @include container-query(medium) {
+        padding: 1rem;
+        border-left: solid 1px $light;
+        flex-direction: row;
+        gap: 0.5rem;
+      }
+      .flex-group-col {
+        gap: 3rem;
+        @include container-query(medium) {
+          gap: 4rem;
+        }
+      }
+      img {
+        max-width: auto;
+        width: 100%;
+        height: 90px;
+        @include container-query(medium) {
+          max-width: 20vw;
+          height: 70px;
+        }
+        // @include transition-fast(transform);
+        // &:hover {
+        //   transform: scale(1.1);
+        // }
+      }
+    }
   }
 
   &::before,
   &::after {
-    display: none;
+    display: block;
     content: "";
     position: absolute;
     left: -2rem;
@@ -25,6 +69,8 @@
     z-index: 2;
     pointer-events: none;
     background-color: $dark;
+    transform: translateZ(0);
+    will-change: filter;
     @include container-query(medium) {
       display: block;
     }
@@ -34,26 +80,5 @@
   }
   &::after {
     bottom: -4rem;
-  }
-
-  .scrolling-brands {
-    display: flex;
-    overflow: hidden;
-    .scrolling-inner {
-      display: flex;
-      gap: 2rem;
-      animation: marquee 20s linear infinite;
-      align-items: center;
-      padding: 3rem 0;
-      @include container-query(medium) {
-        animation: marquee 25s linear infinite;
-      }
-      img {
-        height: 60px;
-        @include container-query(medium) {
-          height: 80px;
-        }
-      }
-    }
   }
 }
