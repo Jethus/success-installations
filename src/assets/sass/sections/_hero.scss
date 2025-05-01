@@ -2,11 +2,13 @@
 
 #hero {
   padding: 8rem 2rem;
+  height: 100%;
+  position: relative;
   @include container-query(large) {
     padding: 10rem 2rem;
   }
   .hero-image {
-    display: flex;
+    display: -webkit-box;
     height: 100%;
     position: absolute;
     top: 0;
