@@ -11,8 +11,13 @@
 
   .container {
     padding: 2rem;
+    display: block;
     & > .flex-group-row {
+      flex-direction: column;
       padding: 2rem 0;
+      @include container-query(medium) {
+        flex-direction: row;
+      }
     }
     .flex-text {
       flex: 1;
@@ -20,14 +25,30 @@
 
     .brands-list {
       flex: 2.25;
-      padding: 1rem;
-      border-left: solid 1px $light;
-      gap: 0.5rem;
+      border: none;
+      flex-direction: column;
+      gap: 3rem;
+      padding: 0;
+      @include container-query(medium) {
+        padding: 1rem;
+        border-left: solid 1px $light;
+        flex-direction: row;
+        gap: 0.5rem;
+      }
       .flex-group-col {
-        gap: 4rem;
+        gap: 3rem;
+        @include container-query(medium) {
+          gap: 4rem;
+        }
       }
       img {
-        max-width: 20vw;
+        max-width: auto;
+        width: 100%;
+        height: 90px;
+        @include container-query(medium) {
+          max-width: 20vw;
+          height: 70px;
+        }
         // @include transition-fast(transform);
         // &:hover {
         //   transform: scale(1.1);
