@@ -11,16 +11,28 @@
 
   .overlay {
     background-color: rgba(0, 0, 0, 0.66);
-    padding: 2rem;
+    padding: 1.25rem;
     margin: 0;
     margin-top: 4rem;
     border-radius: 0.5rem;
-    .emphasis {
-      @include fluid-type(5);
-      color: $brand-secondary;
-      text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
-      line-height: normal;
-      white-space: nowrap;
+    @include container-query(medium) {
+      padding: 2rem;
+    }
+    .title {
+      @include fluid-type(3);
+      .emphasis {
+        @include fluid-type(4);
+        color: $brand-secondary;
+        text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+        line-height: normal;
+        white-space: nowrap;
+      }
+      @include container-query(medium) {
+        @include fluid-type(4);
+        .emphasis {
+          @include fluid-type(5);
+        }
+      }
     }
   }
 

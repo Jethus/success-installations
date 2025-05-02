@@ -16,7 +16,7 @@
 
   #contact-form {
     background-color: $brand-primary;
-    padding: 2rem 3rem;
+    padding: 2rem 2em;
     border-radius: 1rem;
     width: 90%;
     @include drop-shadow;
@@ -59,6 +59,7 @@
       }
     }
     #contact-form {
+      padding: 2rem 3rem;
       width: auto;
       max-width: 40%;
     }
