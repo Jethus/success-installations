@@ -11,16 +11,31 @@
 
   .container {
     padding: 2rem 1.5rem;
-    display: block;
+    flex-direction: column;
     & > .flex-group-row {
       flex-direction: column;
       padding: 2rem 0;
       @include container-query(medium) {
         flex-direction: row;
       }
+
+      & ~ .btn-red {
+        margin-bottom: 2rem;
+        @include container-query(medium) {
+          display: none;
+        }
+      }
     }
     .flex-text {
       flex: 1;
+      .btn-red {
+        margin-top: 2rem;
+        display: none;
+        align-self: flex-start;
+        @include container-query(medium) {
+          display: block;
+        }
+      }
     }
 
     .brands-list {
